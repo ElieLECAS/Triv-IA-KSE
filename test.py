@@ -15,6 +15,7 @@ class Plateau:
     def afficher_le_plateau(self):
         for ligne in self.grille:
             print(ligne)
+    
 
     def lance_de(self):
         resultat = randint(1, 6)
