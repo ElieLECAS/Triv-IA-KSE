@@ -1,4 +1,4 @@
-import le_de 
+from random import randint
 
 class Plateau:
     def __init__(self, largeur_de_la_grille):
@@ -15,10 +15,15 @@ class Plateau:
         for ligne in self.grille:
             print(ligne)
 
+    def lance_de(self):
+            resultat = randint(1,6)
+            print(f'Le lancer du dé donne : {resultat}')
+            return resultat
+            
+    
+
 plateau1 = Plateau(6)
 plateau1.afficher_le_plateau()
+plateau1.lance_de()
 
 
-de1=le_de()
-de1.lance_de()
-de1.affiche_le_resultat()
