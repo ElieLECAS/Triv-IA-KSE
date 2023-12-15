@@ -1,3 +1,5 @@
+import le_de 
+
 class Plateau:
     def __init__(self, largeur_de_la_grille):
         self.largeur_de_la_grille = largeur_de_la_grille
@@ -15,3 +17,8 @@ class Plateau:
 
 plateau1 = Plateau(6)
 plateau1.afficher_le_plateau()
+
+
+de1=le_de()
+de1.lance_de()
+de1.affiche_le_resultat()
