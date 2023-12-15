@@ -1,4 +1,5 @@
 from random import randint
+from pion import Camembert
 
 class Plateau:
     def __init__(self, largeur_de_la_grille):
@@ -9,7 +10,8 @@ class Plateau:
         self.tableau_de_scores = []
 
     def peupler_le_plateau(self, nombre_de_joueurs):
-        self.joueurs = [Plateau(self) for joueur in range(nombre_de_joueurs)]
+        self.joueurs = [Camembert(self) for joueur in range(nombre_de_joueurs)]
+        # il y a autant de camemebert que de joueur 
 
     def afficher_le_plateau(self):
         for ligne in self.grille:
@@ -23,6 +25,7 @@ class Plateau:
     
 
 plateau1 = Plateau(6)
+plateau1.peupler_le_plateau(1)
 plateau1.afficher_le_plateau()
 plateau1.lance_de()
 
