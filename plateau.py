@@ -1,5 +1,6 @@
 from random import randint
-from pion import Camembert
+from random import random
+# from pion import Camembert
 
 class Plateau:
     def __init__(self, largeur_de_la_grille):
@@ -22,11 +23,19 @@ class Plateau:
             print(f'Le lancer du dé donne : {resultat}')
             return resultat
             
+class Camembert:
+    def __init__(self,plateau):
+        self.couleur = "⭕"
+        self.tot_bonnes_reponses = []
+        self.score=set(self.tot_bonnes_reponses)
+        self.plateau = plateau
+        self.x = random.choice(range(plateau.largeur_de_la_grille))
+
     
 
 plateau1 = Plateau(6)
 plateau1.peupler_le_plateau(1)
 plateau1.afficher_le_plateau()
 plateau1.lance_de()
-
+camembert1=Camembert(plateau1)
 

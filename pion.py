@@ -1,5 +1,5 @@
-from random import random
-# from plateau import Plateau
+from random import choice
+from plateau import Plateau
 
 class Camembert:
     def __init__(self,plateau):
@@ -9,7 +9,7 @@ class Camembert:
         self.plateau = plateau
         self.x = random.choice(range(plateau.largeur_de_la_grille))
 
-camembert1=Camembert()
+
 
     # def deplacement (self):
         
