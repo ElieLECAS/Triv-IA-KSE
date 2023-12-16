@@ -1,5 +1,4 @@
-from random import randint
-from random import random
+from random import randint,choice
 # from pion import Camembert
 
 class Plateau:
@@ -7,6 +6,7 @@ class Plateau:
         self.largeur_de_la_grille = largeur_de_la_grille
         self.grille = ['🟥','🟨','🟩','🟦','🟪','🟫']
         # self.grille = [0 for case in range(self.largeur_de_la_grille)]
+        self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
         self.joueurs = []
         self.tableau_de_scores = []
 
@@ -25,11 +25,18 @@ class Plateau:
             
 class Camembert:
     def __init__(self,plateau):
-        self.couleur = "⭕"
         self.tot_bonnes_reponses = []
         self.score=set(self.tot_bonnes_reponses)
         self.plateau = plateau
-        self.x = random.choice(range(plateau.largeur_de_la_grille))
+        self.couleur = choice(self.plateau.camemberts_disponibles)
+        self.difficulte = 1
+        self.x = choice(range(plateau.largeur_de_la_grille))
+    
+    def afficher_score(self):
+        return self.score
+    
+    def deplacer_camembert(self):
+        self.x = self.x + self.plateau.resultat
 
     
 
@@ -38,4 +45,3 @@ plateau1.peupler_le_plateau(1)
 plateau1.afficher_le_plateau()
 plateau1.lance_de()
 camembert1=Camembert(plateau1)
-
