@@ -12,11 +12,19 @@ class Plateau:
 
     def peupler_le_plateau(self, nombre_de_joueurs):
         self.joueurs = [Camembert(self) for joueur in range(nombre_de_joueurs)]
-        # il y a autant de camemebert que de joueur 
+        # joueur est une variable pour représenter chaque objet de la classe Camembert  lors la boucle for joueur. A chaque itération, joueur prend
+        # la valeur d'un objet Camembert dans la lsite self.joeurs
 
     def afficher_le_plateau(self):
-        for ligne in self.grille:
-            print(ligne)
+
+        for index, ligne in enumerate(self.grille):
+            for joueur in self.joueurs:
+                if joueur.x == index:
+                    print(f"{ligne} {'<'}")
+                else:
+                    print(ligne)
+
+
 
     def lance_de(self):
             resultat = randint(1,6)
@@ -38,6 +46,8 @@ class Camembert:
     def deplacer_camembert(self):
         resultat_de = self.plateau.lance_de()
         self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
+        
+
 
     
 plateau1 = Plateau(6)
@@ -45,3 +55,5 @@ plateau1.peupler_le_plateau(1)
 plateau1.afficher_le_plateau()
 plateau1.lance_de()
 camembert1=Camembert(plateau1)
+camembert1.afficher_score()
+camembert1.deplacer_camembert()
