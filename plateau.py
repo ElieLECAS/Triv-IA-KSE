@@ -40,7 +40,6 @@ class Camembert:
         self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
 
     
-
 plateau1 = Plateau(6)
 plateau1.peupler_le_plateau(1)
 plateau1.afficher_le_plateau()
