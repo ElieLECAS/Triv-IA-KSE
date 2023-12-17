@@ -2,14 +2,15 @@ from random import randint,choice
 # from pion import Camembert
 
 class Plateau:
-    def __init__(self, largeur_de_la_grille):
-        self.largeur_de_la_grille = largeur_de_la_grille
+    def __init__(self):
+        self.largeur_de_la_grille = 6
         self.grille = ['🟥','🟨','🟩','🟦','🟪','🟫']
         # self.grille = [0 for case in range(self.largeur_de_la_grille)]
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
         self.joueurs = []
         self.tableau_de_scores = []
-        
+        self.resultat= 0
+ 
 
     def peupler_le_plateau(self, nombre_de_joueurs):
         self.joueurs = [Camembert(self) for joueur in range(nombre_de_joueurs)]
@@ -26,15 +27,20 @@ class Plateau:
                        
 
     def lance_de(self):
-            resultat = randint(1,6)
-            print(f'Le lancer du dé donne : {resultat}')
-            return resultat
+            lance_randint = randint(1,6)
+            self.resultat = lance_randint
+            return 
     
     def deroulement (self):
         plateau1.peupler_le_plateau(2)
+        plateau1.afficher_le_plateau()
         for tour in range (1,6):
-            plateau1.lance_de()
-            plateau1.afficher_le_plateau()
+            for joueur in self.joueurs:
+                plateau1.lance_de()
+                valeur_de= self.resultat
+                print(f'Le lancer du joueur: {valeur_de}')
+                joueur.deplacer_camembert()
+                plateau1.afficher_le_plateau()
             print(tour)
 
             
@@ -51,7 +57,7 @@ class Camembert:
         return self.score
     
     def deplacer_camembert(self):
-        resultat_de = self.plateau.lance_de()
+        resultat_de = self.plateau.resultat
         self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
     
     # def deplacer_camembert(self):
@@ -59,7 +65,8 @@ class Camembert:
     #     self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
         
 
-plateau1 = Plateau(6)
+plateau1 = Plateau()
+plateau1.peupler_le_plateau(2)
 plateau1.deroulement()
 
 
