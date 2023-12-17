@@ -1,5 +1,5 @@
 from random import randint,choice
-# from pion import Camembert
+from pion import Camembert
 
 class Plateau:
     def __init__(self):
@@ -42,27 +42,6 @@ class Plateau:
                 joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
             print(tour)
-
-            
-class Camembert:
-    def __init__(self,plateau):
-        self.tot_bonnes_reponses = []
-        self.score=set(self.tot_bonnes_reponses)
-        self.plateau = plateau
-        self.couleur = choice(self.plateau.camemberts_disponibles)
-        self.difficulte = 1
-        self.x = choice(range(plateau.largeur_de_la_grille))
-    
-    def afficher_score(self):
-        return self.score
-    
-    def deplacer_camembert(self):
-        resultat_de = self.plateau.resultat
-        self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
-    
-    # def deplacer_camembert(self):
-    #     resultat_de = self.plateau.lance_de()
-    #     self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
         
 
 plateau1 = Plateau()
@@ -73,12 +52,3 @@ plateau1.deroulement()
 
 
 
-# plateau1 = Plateau(6)
-# plateau1.peupler_le_plateau(1)
-# camembert1=Camembert(plateau1)
-# plateau1.afficher_le_plateau()
-# plateau1.lance_de()
-# camembert1.deplacer_camembert()
-# camembert1.deplacer_camembert()
-# camembert1.afficher_score()
-# plateau1.afficher_le_plateau()
