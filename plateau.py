@@ -9,6 +9,7 @@ class Plateau:
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
         self.joueurs = []
         self.tableau_de_scores = []
+        
 
     def peupler_le_plateau(self, nombre_de_joueurs):
         self.joueurs = [Camembert(self) for joueur in range(nombre_de_joueurs)]
@@ -20,16 +21,22 @@ class Plateau:
         for index, ligne in enumerate(self.grille):
             for joueur in self.joueurs:
                 if joueur.x == index:
-                    print(f"{ligne} {'<'}")
-                else:
-                    print(ligne)
-
-
+                    ligne += f" {joueur.couleur}"
+            print(ligne)
+                       
 
     def lance_de(self):
             resultat = randint(1,6)
             print(f'Le lancer du dé donne : {resultat}')
             return resultat
+    
+    def deroulement (self):
+        plateau1.peupler_le_plateau(2)
+        for tour in range (1,6):
+            plateau1.lance_de()
+            plateau1.afficher_le_plateau()
+            print(tour)
+
             
 class Camembert:
     def __init__(self,plateau):
@@ -46,14 +53,25 @@ class Camembert:
     def deplacer_camembert(self):
         resultat_de = self.plateau.lance_de()
         self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
+    
+    # def deplacer_camembert(self):
+    #     resultat_de = self.plateau.lance_de()
+    #     self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
         
 
-
-    
 plateau1 = Plateau(6)
-plateau1.peupler_le_plateau(1)
-plateau1.afficher_le_plateau()
-plateau1.lance_de()
-camembert1=Camembert(plateau1)
-camembert1.afficher_score()
-camembert1.deplacer_camembert()
+plateau1.deroulement()
+
+
+
+
+
+# plateau1 = Plateau(6)
+# plateau1.peupler_le_plateau(1)
+# camembert1=Camembert(plateau1)
+# plateau1.afficher_le_plateau()
+# plateau1.lance_de()
+# camembert1.deplacer_camembert()
+# camembert1.deplacer_camembert()
+# camembert1.afficher_score()
+# plateau1.afficher_le_plateau()
