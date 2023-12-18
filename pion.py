@@ -8,7 +8,9 @@ class Camembert:
         self.plateau = plateau
         self.couleur = None
         self.difficulte = 1
-        self.x = choice(range(plateau.largeur_de_la_grille))
+        self.nom_du_joueur=input("quel est votre nom? : ")
+        # self.x = choice(range(plateau.largeur_de_la_grille))
+        self.x = 0
     
     def afficher_score(self):
         return self.score

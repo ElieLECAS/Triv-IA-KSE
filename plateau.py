@@ -5,8 +5,9 @@ import time
 
 class Plateau:
     def __init__(self):
-        self.largeur_de_la_grille = 6
-        self.grille = ['🟥','🟨','🟩','🟦','🟪','🟫']
+        self.categories=['🟥','🟨','🟩','🟦','🟪','🟫']
+        self.grille = self.categories *3
+        self.largeur_de_la_grille = len(self.grille)
         # self.grille = [0 for case in range(self.largeur_de_la_grille)]
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
         self.joueurs = []
@@ -38,12 +39,13 @@ class Plateau:
         plateau1.afficher_le_plateau()
         for joueur in self.joueurs:
             joueur.attribution_couleur()
-        for tour in range (1,6):
+        for tour in range (1,2):
             for joueur in self.joueurs:
                 os.system('clear')
                 plateau1.lance_de()
                 valeur_de= self.resultat
-                print(f'Le lancer du joueur {self.joueurs.index(joueur)+1}: {valeur_de}')
+                # print(f'Le lancer du joueur {self.joueurs.index(joueur)+1}: {valeur_de}')
+                print(f'Le lancer du joueur {joueur.nom_du_joueur}: {valeur_de}')
                 joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
                 time.sleep(2)
@@ -51,7 +53,7 @@ class Plateau:
         
 
 plateau1 = Plateau()
-plateau1.peupler_le_plateau(6)
+plateau1.peupler_le_plateau(3)
 plateau1.deroulement()
 
 
