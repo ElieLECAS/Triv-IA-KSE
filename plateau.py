@@ -29,7 +29,7 @@ class Plateau:
                        
 
     def lance_de(self):
-            lance_randint = randint(1,6)
+            lance_randint = randint(1,1)
             self.resultat = lance_randint
             return 
     
@@ -38,7 +38,7 @@ class Plateau:
         plateau1.afficher_le_plateau()
         for joueur in self.joueurs:
             joueur.attribution_couleur_pion()
-        for tour in range (1,20):
+        for tour in range (200):
             for joueur in self.joueurs:
                 os.system('clear')
                 plateau1.lance_de()
@@ -46,14 +46,14 @@ class Plateau:
                 print(f'Le lancer de dé de {joueur.nom_du_joueur} est : {valeur_de}')
                 joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
-                time.sleep(2)
+                time.sleep(.2)
             print(tour)
     
     
         
 
 plateau1 = Plateau()
-plateau1.peupler_le_plateau(3)
+plateau1.peupler_le_plateau(2)
 plateau1.deroulement()
 
 
