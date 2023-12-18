@@ -46,12 +46,20 @@ class Plateau:
                 os.system('cls')
                 plateau1.lance_de()
                 valeur_de= self.resultat
-                print(f'Le lancer de dé de {joueur.nom_du_joueur} est : {valeur_de}')
-                joueur.deplacer_camembert()
-                if input('a. True   b. False\n\nVotre réponse') == "a":
-                    joueur.deplacer_camembert()
+                print(f'\nC\'est le tour de {joueur.nom_du_joueur} !\nTu as {len(joueur.score)} camemberts\n')
                 plateau1.afficher_le_plateau()
-                time.sleep(1)
+                input("\nAppuie sur Entrée pour lancer le dé ! ")
+                os.system('cls')
+                print(f'Le lancer de dé donne  : {valeur_de}\n')
+                joueur.deplacer_camembert()
+                plateau1.afficher_le_plateau()
+                if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
+                    os.system('cls')
+                    print('Bravo ! \n')
+                    joueur.difficulte += 1
+                plateau1.afficher_le_plateau()
+                print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
+                input('\nAppuie sur Entrée pour finir le tour !\n')
             print(tour)
     
     
