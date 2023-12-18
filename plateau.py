@@ -53,10 +53,15 @@ class Plateau:
                 print(f'Le lancer de dé donne  : {valeur_de}\n')
                 joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
+
                 if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
                     os.system('clear')
                     print('Bravo ! \n')
                     joueur.difficulte += 1
+                else:
+                    os.system('clear')
+                    print('Perdu ! \n')
+                    
                 plateau1.afficher_le_plateau()
                 print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
                 input('\nAppuie sur Entrée pour finir le tour !\n')
