@@ -29,7 +29,7 @@ class Plateau:
                        
 
     def lance_de(self):
-            lance_randint = randint(1,1)
+            lance_randint = randint(1,6)
             self.resultat = lance_randint
             return 
     
