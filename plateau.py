@@ -43,18 +43,18 @@ class Plateau:
             joueur.attribution_couleur_pion()
         for tour in range (200):
             for joueur in self.joueurs:
-                os.system('cls')
+                os.system('clear')
                 plateau1.lance_de()
                 valeur_de= self.resultat
                 print(f'\nC\'est le tour de {joueur.nom_du_joueur} !\nTu as {len(joueur.score)} camemberts\n')
                 plateau1.afficher_le_plateau()
                 input("\nAppuie sur Entrée pour lancer le dé ! ")
-                os.system('cls')
+                os.system('clear')
                 print(f'Le lancer de dé donne  : {valeur_de}\n')
                 joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
                 if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
-                    os.system('cls')
+                    os.system('clear')
                     print('Bravo ! \n')
                     joueur.difficulte += 1
                 plateau1.afficher_le_plateau()
