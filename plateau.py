@@ -1,5 +1,7 @@
 from random import randint,choice
 from pion import Camembert
+import os
+import time
 
 class Plateau:
     def __init__(self):
@@ -36,11 +38,13 @@ class Plateau:
         plateau1.afficher_le_plateau()
         for tour in range (1,6):
             for joueur in self.joueurs:
+                os.system('clear')
                 plateau1.lance_de()
                 valeur_de= self.resultat
                 print(f'Le lancer du joueur: {valeur_de}')
                 joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
+                time.sleep(2)
             print(tour)
         
 
