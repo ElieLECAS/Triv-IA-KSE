@@ -37,7 +37,7 @@ class Plateau:
         
         plateau1.afficher_le_plateau()
         for joueur in self.joueurs:
-            joueur.attribution_pion()
+            joueur.attribution_couleur_pion()
         for tour in range (1,2):
             for joueur in self.joueurs:
                 os.system('clear')

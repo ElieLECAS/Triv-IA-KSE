@@ -16,7 +16,7 @@ class Camembert:
     
 
         
-    def attribution_pion (self):
+    def attribution_couleur_pion (self):
         self.couleur = choice(self.plateau.camemberts_disponibles)
         self.plateau.camemberts_disponibles.remove(self.couleur)
         return 
