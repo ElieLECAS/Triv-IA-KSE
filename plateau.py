@@ -27,6 +27,9 @@ class Plateau:
                     ligne += f" {joueur.couleur} {joueur.nom_du_joueur}"
             print(  ligne)
                        
+    # def choix_categorie(self):
+    #     if index de la case == '🟥':
+    #         lancer le sql pour récuperer le theme ()
 
     def lance_de(self):
             lance_randint = randint(1,6)
