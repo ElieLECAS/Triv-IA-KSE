@@ -43,13 +43,15 @@ class Plateau:
             joueur.attribution_couleur_pion()
         for tour in range (200):
             for joueur in self.joueurs:
-                os.system('clear')
+                os.system('cls')
                 plateau1.lance_de()
                 valeur_de= self.resultat
                 print(f'Le lancer de dé de {joueur.nom_du_joueur} est : {valeur_de}')
                 joueur.deplacer_camembert()
+                if input('a. True   b. False\n\nVotre réponse') == "a":
+                    joueur.deplacer_camembert()
                 plateau1.afficher_le_plateau()
-                time.sleep(.2)
+                time.sleep(1)
             print(tour)
     
     
