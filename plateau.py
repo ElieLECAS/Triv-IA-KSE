@@ -37,7 +37,6 @@ class Plateau:
             joueur.attribution_couleur_pion()
         for tour in range (200):
             for joueur in self.joueurs:
-                joueur_en_cours=joueur
                 os.system('clear')
                 joueur.lance_de()                
                 valeur_de= joueur.resultat
@@ -54,11 +53,15 @@ class Plateau:
                 if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
                     os.system('clear')
                     print('Bravo ! \n')
+                    joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
                     joueur.difficulte += 1
                 else:
                     os.system('clear')
                     print('Perdu ! \n')
-                    
+
+                print(joueur.tot_bonnes_reponses)
+                joueur.afficher_score()
+                print(joueur.score)   
                 plateau1.afficher_le_plateau()
                 print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
                 input('\nAppuie sur Entrée pour finir le tour !\n')
@@ -68,7 +71,7 @@ class Plateau:
         
 
 plateau1 = Plateau()
-plateau1.peupler_le_plateau(3)
+plateau1.peupler_le_plateau(1)
 plateau1.deroulement()
 
 

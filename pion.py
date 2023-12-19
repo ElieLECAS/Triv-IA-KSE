@@ -4,7 +4,7 @@ from random import choice,randint
 class Camembert:
     def __init__(self,plateau):
         self.tot_bonnes_reponses = []
-        self.score=set(self.tot_bonnes_reponses)
+        self.score= ()
         self.plateau = plateau
         self.couleur = None
         self.difficulte = 1
@@ -12,8 +12,10 @@ class Camembert:
         self.x = 0
         self.resultat = None
     
+        
     def afficher_score(self):
-        return self.score
+        self.score=set(self.tot_bonnes_reponses)
+        return 
     
     def lance_de(self):
         lance_randint = randint(1,6)
