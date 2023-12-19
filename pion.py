@@ -10,7 +10,7 @@ class Camembert:
         self.difficulte = 1
         self.nom_du_joueur= input("quel est votre nom? : ")
         self.x = 0
-        self.resultat= None
+        self.resultat = None
     
     def afficher_score(self):
         return self.score
