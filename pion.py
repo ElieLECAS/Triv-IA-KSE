@@ -1,4 +1,4 @@
-from random import choice
+from random import choice,randint
 
 
 class Camembert:
@@ -14,7 +14,10 @@ class Camembert:
     def afficher_score(self):
         return self.score
     
-
+    def lance_de(self):
+        lance_randint = randint(1,6)
+        self.resultat = lance_randint
+        return 
         
     def attribution_couleur_pion (self):
         self.couleur = choice(self.plateau.camemberts_disponibles)
@@ -22,5 +25,6 @@ class Camembert:
         return 
     
     def deplacer_camembert(self):
-        resultat_de = self.plateau.resultat
+        resultat_de = self.resultat
         self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
+        # self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
