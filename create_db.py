@@ -5,14 +5,14 @@ import mysql.connector
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="Rick3822+"
+    passwd="psswd"
 )
  
 # cursor object c
 c = db.cursor()
  
 # executing the create database statement
-c.execute("CREATE DATABASE trivIA_db")
+c.execute("CREATE DATABASE trivia_db")
  
 # fetching all the databases
 c.execute("SHOW DATABASES")

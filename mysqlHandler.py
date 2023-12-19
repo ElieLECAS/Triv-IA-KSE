@@ -60,7 +60,7 @@ class MySQLHandler:
     # Methode de création de la table Difficultés, qui prend en compte un ID, et un niveau de difficulté qui sera compris entre 3 différents niveaux
     def create_table_difficultes(self):
         difficulteTbl = """
-            CREATE TABLE IF NOT EXISTS difficulte (
+            CREATE TABLE IF NOT EXISTS difficultes (
                 id_difficulte INT NOT NULL AUTO_INCREMENT,
                 niveau VARCHAR(255) NOT NULL,
                 PRIMARY KEY (id_difficulte)
@@ -76,11 +76,13 @@ class MySQLHandler:
         self.connection.close()
 
 
-    # En suivant le modèle CRUD, on créé les méthodes de création, de lecture, de mise à jour et de suppression des différentes tables
+
+
+    # En suivant le modèle CRUD, on créé les méthodes de création, de lecture, de mise à jour et de suppression des différentes itérations de chaque table
     def create_questions(self, intitule, choix1, choix2, choix3, choix4, id_categorie, id_difficulte):
         new = """
             INSERT INTO questions (intitule, choix1, choix2, choix3, choix4, id_categorie, id_difficulte)
-            VALUES (%s, %s, %s, %s, %s, %d, %d)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
         values = (intitule, choix1, choix2, choix3, choix4, id_categorie, id_difficulte)
         self.cursor.execute(new, values)
@@ -88,7 +90,7 @@ class MySQLHandler:
 
 
     def read_questions(self):
-        query = "SELECT * FROM questions"
+        query = """SELECT * FROM questions"""
         self.cursor.execute(query)
         return self.cursor.fetchall()
     
@@ -113,6 +115,39 @@ class MySQLHandler:
         query = "DELETE FROM questions WHERE id_question = %s"
         self.cursor.execute(query)
         self.connection.commit()
+
+
+    def create_categorie(self, nom):
+        new = """
+            INSERT INTO categories (nom)
+            VALUES (%s)
+        """
+        values = (nom,)
+        self.cursor.execute(new, values)
+        self.connection.commit()
+
+
+    def create_difficulte(self, niveau):
+        new = """
+            INSERT INTO difficultes (niveau)
+            VALUES (%s)
+        """
+        values = (niveau,)
+        self.cursor.execute(new, values)
+        self.connection.commit()
+
+
+access = MySQLHandler(host='localhost' , user='root' , password='psswd' , database='trivia_db')
+# table = "questions"
+access.create_table_categories()
+access.create_table_difficultes()
+access.create_table_questions()
+access.create_table_reponses()
+access.create_categorie("Python")
+access.create_difficulte("facile")
+access.create_questions("quel est le nom du python master ?" , "Kevin" , "Elie" , "Simon" , "Tony" , 0 , 0)
+print(access.read_questions())
+
 
 
     

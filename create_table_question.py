@@ -5,14 +5,14 @@ import mysql.connector
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="Rick3822+",
-    database="trivIA_db"
+    passwd="psswd",
+    database="trivia_db"
 )
  
 # cursor object c
 c = db.cursor()
 
-questionTable_create = """CREATE TABLE `trivIA_db`.`questions` (
+questionTable_create = """CREATE TABLE `trivia_db`.`questions` (
     `id_question` INT NOT NULL AUTO_INCREMENT,
     `categorie` VARCHAR(255) NOT NULL,
     `intitule` TEXT NOT NULL,
