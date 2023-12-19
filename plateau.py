@@ -89,7 +89,8 @@ class Plateau:
         plateau1.afficher_le_plateau()
         for joueur in self.joueurs:
             joueur.attribution_couleur_pion()
-        for tour in range (200):
+        # for tour in range (200):
+        while len(joueur.score)<6:
             for joueur in self.joueurs:
                 os.system('clear')
                 joueur.lance_de()                
@@ -119,7 +120,7 @@ class Plateau:
                 plateau1.afficher_le_plateau()
                 print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
                 input('\nAppuie sur Entrée pour finir le tour !\n')
-            print(tour)
+            
     
     
         
