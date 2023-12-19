@@ -28,15 +28,7 @@ class Plateau:
                 if joueur.x == index:
                     ligne += f" {joueur.couleur} {joueur.nom_du_joueur}"
             print(  ligne)
-                       
-    # def choix_categorie(self):
-    #     if index de la case == '🟥':
-    #         lancer le sql pour récuperer le theme ()
-
-    # def lance_de(self):
-    #         lance_randint = randint(1,6)
-    #         self.resultat = lance_randint
-    #         return 
+                    
     
     def deroulement (self):
         
@@ -45,7 +37,7 @@ class Plateau:
             joueur.attribution_couleur_pion()
         for tour in range (200):
             for joueur in self.joueurs:
-
+                joueur_en_cours=joueur
                 os.system('clear')
                 joueur.lance_de()                
                 valeur_de= joueur.resultat
