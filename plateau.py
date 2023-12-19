@@ -7,6 +7,7 @@ import time
 class Plateau:
     def __init__(self):
         self.categories=['🟥','🟨','🟩','🟦','🟪','🟫']
+        self.triangle_camembert=['🟥','🟨','🟩','🟦','🟪','🟫']
         self.grille = self.categories *3
         self.largeur_de_la_grille = len(self.grille)
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
@@ -126,7 +127,7 @@ class Plateau:
         
 
 plateau1 = Plateau()
-plateau1.peupler_le_plateau(1)
+plateau1.peupler_le_plateau(2)
 plateau1.deroulement()
 
 
