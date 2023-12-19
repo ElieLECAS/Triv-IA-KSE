@@ -27,7 +27,61 @@ class Plateau:
             for joueur in self.joueurs:
                 if joueur.x == index:
                     ligne += f" {joueur.couleur} {joueur.nom_du_joueur}"
-            print(  ligne)
+            print(ligne)
+    
+    def attribution_categorie(self,joueur):
+
+        if self.grille[joueur.x] =='🟥':
+            if joueur.difficulte == 1:
+                pass
+            if joueur.difficulte == 2:
+                pass
+            if joueur.difficulte == 3:
+                pass
+            pass
+        elif self.grille[joueur.x] =='🟨':
+            if joueur.difficulte == 1:
+                pass
+            if joueur.difficulte == 2:
+                pass
+            if joueur.difficulte == 3:
+                pass
+            pass
+        elif self.grille[joueur.x] =='🟩':
+            if joueur.difficulte == 1:
+                pass
+            if joueur.difficulte == 2:
+                pass
+            if joueur.difficulte == 3:
+                pass
+            pass
+        elif self.grille[joueur.x] =='🟦':
+            if joueur.difficulte == 1:
+                pass
+            if joueur.difficulte == 2:
+                pass
+            if joueur.difficulte == 3:
+                pass
+            pass
+        elif self.grille[joueur.x] =='🟪':
+            if joueur.difficulte == 1:
+                pass
+            if joueur.difficulte == 2:
+                pass
+            if joueur.difficulte == 3:
+                pass
+            pass
+        elif self.grille[joueur.x] =='🟫':
+            if joueur.difficulte == 1:
+                pass
+            if joueur.difficulte == 2:
+                pass
+            if joueur.difficulte == 3:
+                pass
+            pass
+
+
+
                     
     
     def deroulement (self):
