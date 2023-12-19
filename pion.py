@@ -10,6 +10,7 @@ class Camembert:
         self.difficulte = 1
         self.nom_du_joueur= input("quel est votre nom? : ")
         self.x = 0
+        self.resultat= None
     
     def afficher_score(self):
         return self.score
@@ -17,7 +18,8 @@ class Camembert:
     def lance_de(self):
         lance_randint = randint(1,6)
         self.resultat = lance_randint
-        return 
+        return
+
         
     def attribution_couleur_pion (self):
         self.couleur = choice(self.plateau.camemberts_disponibles)
