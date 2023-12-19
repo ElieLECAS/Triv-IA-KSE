@@ -109,7 +109,10 @@ class Plateau:
                     os.system('clear')
                     print('Bravo ! \n')
                     joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
-                    joueur.difficulte += 1
+                    if len(joueur.score)  2:
+                        joueur.difficulte += 1
+                    elif len(joueur.score) == 4:
+                        joueur.difficulte += 1
                 else:
                     os.system('clear')
                     print('Perdu ! \n')
