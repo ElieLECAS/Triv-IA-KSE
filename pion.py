@@ -31,4 +31,3 @@ class Camembert:
     def deplacer_camembert(self):
         resultat_de = self.resultat
         self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
-        # self.x = (self.x + resultat_de) % self.plateau.largeur_de_la_grille
