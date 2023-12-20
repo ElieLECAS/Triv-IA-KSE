@@ -6,7 +6,7 @@ import time
 class Plateau:
     def __init__(self):
         self.categories=['🟥','🟨','🟩','🟦','🟪','🟫']
-        self.triangle_camembert=['🟥','🟨','🟩','🟦','🟪','🟫']
+        # self.triangle_camembert=['🟥','🟨','🟩','🟦','🟪','🟫']
         self.grille = self.categories *3
         self.largeur_de_la_grille = len(self.grille)
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
@@ -115,7 +115,7 @@ class Plateau:
         plateau1.afficher_le_plateau()
         print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
         input('\nAppuie sur Entrée pour finir le tour !\n')
-
+        
             
     
     def deroulement (self):
@@ -130,12 +130,13 @@ class Plateau:
                 plateau1.debut_de_tour(joueur)
                 plateau1.questions_reponses(joueur)
                 plateau1.fin_de_tour(joueur)
-                if joueur.score == 6:
-                    print("Gagné !")
+
+                if len(joueur.score) == 6:
+                    print("Gagné !\n")
                     break
-                
+                                
         for joueur in self.joueurs:
-            print(f'{joueur.nom_du_joueur} : {sorted(joueur.tot_bonnes_reponses, reverse=True)}')
+            print(f'{joueur.nom_du_joueur} : {sorted(joueur.tot_bonnes_reponses, reverse=True)}\n')
         
             
     
