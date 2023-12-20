@@ -79,15 +79,15 @@ class Plateau:
 
 
     def debut_de_tour(self, joueur):
-        os.system('clear')
+        os.system('cls')
         joueur.lance_de()                
         valeur_de= joueur.resultat
                 
         self.afficher_le_plateau()
-        print(f'\nC\'est le tour de {joueur.couleur} {joueur.nom_du_joueur} !\n\nTu as {len(joueur.score)} camemberts\n {joueur.score}\n\n')
+        print(f'\nC\'est le tour de {joueur.couleur} {joueur.nom_du_joueur} !\n\nTu as {len(joueur.score)} camemberts\n {" ".join(joueur.score)}\n\n')
         input("\nAppuie sur Entrée pour lancer le dé ! ")
 
-        os.system('clear')
+        os.system('cls')
         
         print(f'Le lancer de dé donne  : {valeur_de}\n')
         joueur.deplacer_camembert()
@@ -96,7 +96,7 @@ class Plateau:
 
     def questions_reponses(self, joueur):
         if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
-            os.system('clear')
+            os.system('cls')
             print('Bravo ! \n')
             joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
             if len(joueur.score) == 2:
@@ -104,14 +104,17 @@ class Plateau:
             elif len(joueur.score) == 4:
                 joueur.difficulte = "Difficile"
         else:
-            os.system('clear')
+            os.system('cls')
             print('Perdu ! \n')
+
+        joueur.tot_reponses_repondues.append(self.grille[joueur.x])
 
     def fin_de_tour(self, joueur):
         joueur.afficher_score()
-        print(joueur.score)   
+           
         self.afficher_le_plateau()
         print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
+        print(" ".join(joueur.score))
         input('\nAppuie sur Entrée pour finir le tour !\n')
     
     def deroulement (self):
@@ -132,10 +135,30 @@ class Plateau:
                     break
                                 
         for joueur in self.joueurs:
-            print(f'{joueur.nom_du_joueur} : {sorted(joueur.tot_bonnes_reponses, reverse=True)}\n')
-            print(f'{joueur.tot_bonnes_reponses.count("🟥")}\n{joueur.tot_bonnes_reponses.count("🟨")}\n{joueur.tot_bonnes_reponses.count("🟩")}\n{joueur.tot_bonnes_reponses.count("🟦")}\n{joueur.tot_bonnes_reponses.count("🟪")}\n{joueur.tot_bonnes_reponses.count("🟫")}\n')
+            print(f'{joueur.nom_du_joueur} : {" ".join(sorted(joueur.tot_bonnes_reponses, reverse=True))}\n')
+            print(f'Tu as répondu correctement à {len(joueur.tot_bonnes_reponses)} sur {len(joueur.tot_reponses_repondues)} soit un ration de {int(len(joueur.tot_bonnes_reponses)/len(joueur.tot_reponses_repondues))*100}%\n')
+
+            for categorie in joueur.score and self.categories:
+                print(f'{categorie} : {joueur.tot_bonnes_reponses.count(categorie)} / {joueur.tot_reponses_repondues.count(categorie)} {int(joueur.tot_reponses_repondues.count(categorie) and joueur.tot_bonnes_reponses.count(categorie)/joueur.tot_reponses_repondues.count(categorie)*100 or 0)}%\n')
+
         
-            
+
+
+            # print(f'''
+            #       🟥 : {joueur.tot_bonnes_reponses.count("🟥")} / {joueur.tot_reponses_repondues.count("🟥")} {int(joueur.tot_reponses_repondues.count("🟥") and joueur.tot_bonnes_reponses.count("🟥")/joueur.tot_reponses_repondues.count("🟥")*100 or 0)}%\n
+
+            #       🟨 : {joueur.tot_bonnes_reponses.count("🟨")} / {joueur.tot_reponses_repondues.count("🟨")} {int(joueur.tot_reponses_repondues.count("🟨") and joueur.tot_bonnes_reponses.count("🟨")/joueur.tot_reponses_repondues.count("🟨")*100 or 0)}%\n
+
+            #       🟩 : {joueur.tot_bonnes_reponses.count("🟩")} / {joueur.tot_reponses_repondues.count("🟩")} {int(joueur.tot_reponses_repondues.count("🟩") and joueur.tot_bonnes_reponses.count("🟩")/joueur.tot_reponses_repondues.count("🟩")*100 or 0)}%\n
+
+            #       🟦 : {joueur.tot_bonnes_reponses.count("🟦")} / {joueur.tot_reponses_repondues.count("🟦")} {int(joueur.tot_reponses_repondues.count("🟦") and joueur.tot_bonnes_reponses.count("🟦")/joueur.tot_reponses_repondues.count("🟦")*100 or 0)}%\n
+
+            #       🟪 : {joueur.tot_bonnes_reponses.count("🟪")} / {joueur.tot_reponses_repondues.count("🟪")} {int(joueur.tot_reponses_repondues.count("🟪") and joueur.tot_bonnes_reponses.count("🟪")/joueur.tot_reponses_repondues.count("🟪")*100 or 0)}%\n
+
+            #       🟫 : {joueur.tot_bonnes_reponses.count("🟫")} / {joueur.tot_reponses_repondues.count("🟫")} {int(joueur.tot_reponses_repondues.count("🟫") and joueur.tot_bonnes_reponses.count("🟫")/joueur.tot_reponses_repondues.count("🟫")*100 or 0)}%\n
+
+                
+            # ''')
     
 plateau1 = Plateau()
 plateau1.peupler_le_plateau(int(input("Combien de joueurs : ")))
