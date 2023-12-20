@@ -31,53 +31,48 @@ class Plateau:
     def attribution_categorie(self,joueur):
 
         if self.grille[joueur.x] =='🟥':
-            if joueur.difficulte == 1:
-                pass
-            if joueur.difficulte == 2:
-                pass
-            if joueur.difficulte == 3:
-                pass
-            pass
+            if joueur.difficulte == "Facile":
+                print('rouge 1')
+            if joueur.difficulte == "Intermediaire":
+                print('rouge 2')
+            if joueur.difficulte == "Difficle":
+                print('rouge 3')
+            
         elif self.grille[joueur.x] =='🟨':
-            if joueur.difficulte == 1:
-                pass
-            if joueur.difficulte == 2:
-                pass
-            if joueur.difficulte == 3:
-                pass
-            pass
+            if joueur.difficulte == "Facile":
+                print('jaune 1')
+            if joueur.difficulte == "Intermediaire":
+                print('jaune 2')
+            if joueur.difficulte == "Difficle":
+                print('jaune 3')
         elif self.grille[joueur.x] =='🟩':
-            if joueur.difficulte == 1:
-                pass
-            if joueur.difficulte == 2:
-                pass
-            if joueur.difficulte == 3:
-                pass
-            pass
+            if joueur.difficulte == "Facile":
+                print('vert 1')
+            if joueur.difficulte == "Intermediaire":
+                print('vert 2')
+            if joueur.difficulte == "Difficle":
+                print('vert 3')
         elif self.grille[joueur.x] =='🟦':
-            if joueur.difficulte == 1:
-                pass
-            if joueur.difficulte == 2:
-                pass
-            if joueur.difficulte == 3:
-                pass
-            pass
+            if joueur.difficulte == "Facile":
+                print('bleu 1')
+            if joueur.difficulte == "Intermediaire":
+                print('bleu 2')
+            if joueur.difficulte == "Difficle":
+                print('bleu 3')
         elif self.grille[joueur.x] =='🟪':
-            if joueur.difficulte == 1:
-                pass
-            if joueur.difficulte == 2:
-                pass
-            if joueur.difficulte == 3:
-                pass
-            pass
+            if joueur.difficulte == "Facile":
+                print('violet 1')
+            if joueur.difficulte == "Intermediaire":
+                print('violet 2')
+            if joueur.difficulte == "Difficle":
+                print('violet 3')
         elif self.grille[joueur.x] =='🟫':
-            if joueur.difficulte == 1:
-                pass
-            if joueur.difficulte == 2:
-                pass
-            if joueur.difficulte == 3:
-                pass
-            pass
+            if joueur.difficulte == "Facile":
+                print('marron 1')
+            if joueur.difficulte == "Intermediaire":
+                print('marron 2')
+            if joueur.difficulte == "Difficle":
+                print('marron 3')
 
 
     def debut_de_tour(self, joueur):
@@ -94,6 +89,7 @@ class Plateau:
         print(f'Le lancer de dé donne  : {valeur_de}\n')
         joueur.deplacer_camembert()
         plateau1.afficher_le_plateau()
+        plateau1.attribution_categorie(joueur)
 
 
     def questions_reponses(self, joueur):
