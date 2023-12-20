@@ -123,14 +123,16 @@ class Plateau:
         plateau1.afficher_le_plateau()
         for joueur in self.joueurs:
             joueur.attribution_couleur_pion()
-        # for tour in range (200):
+
         while len(joueur.score)<6:
             for joueur in self.joueurs:
 
                 plateau1.debut_de_tour(joueur)
                 plateau1.questions_reponses(joueur)
                 plateau1.fin_de_tour(joueur)
-
+                if joueur.score == 6:
+                    print("Gagné !")
+                    break
                 
         for joueur in self.joueurs:
             print(f'{joueur.nom_du_joueur} : {sorted(joueur.tot_bonnes_reponses, reverse=True)}')
@@ -141,7 +143,7 @@ class Plateau:
         
 
 plateau1 = Plateau()
-plateau1.peupler_le_plateau(1)
+plateau1.peupler_le_plateau(2)
 plateau1.deroulement()
 
 
