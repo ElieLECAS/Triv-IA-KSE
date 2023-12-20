@@ -94,7 +94,6 @@ class Plateau:
         self.afficher_le_plateau()
         self.attribution_categorie(joueur)
 
-
     def questions_reponses(self, joueur):
         if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
             os.system('clear')
@@ -114,8 +113,6 @@ class Plateau:
         self.afficher_le_plateau()
         print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
         input('\nAppuie sur Entrée pour finir le tour !\n')
-        
-            
     
     def deroulement (self):
         
@@ -139,15 +136,6 @@ class Plateau:
         
             
     
-    
-        
-
 plateau1 = Plateau()
-plateau1.peupler_le_plateau(2)
+plateau1.peupler_le_plateau(int(input("Combien de joueurs : ")))
 plateau1.deroulement()
-
-
-
-
-
-
