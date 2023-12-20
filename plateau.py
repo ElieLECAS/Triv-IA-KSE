@@ -133,6 +133,7 @@ class Plateau:
                                 
         for joueur in self.joueurs:
             print(f'{joueur.nom_du_joueur} : {sorted(joueur.tot_bonnes_reponses, reverse=True)}\n')
+            print(f'{joueur.tot_bonnes_reponses.count("🟥")}\n{joueur.tot_bonnes_reponses.count("🟨")}\n{joueur.tot_bonnes_reponses.count("🟩")}\n{joueur.tot_bonnes_reponses.count("🟦")}\n{joueur.tot_bonnes_reponses.count("🟪")}\n{joueur.tot_bonnes_reponses.count("🟫")}\n')
         
             
     
