@@ -1,0 +1,31 @@
+intitule,choix1,choix2,choix3,choix4,categorie,difficulte,
+Quelle commande Git permet de cloner un dépôt distant?,a) git init,b) git clone,c) git pull,d) git push,git/github,Facile,b
+"Que fait la commande ""git add""?",a) Valide les modifications,b) Ajoute des fichiers à l'index,c) Supprime des fichiers du dépôt,d) Crée une nouvelle branche,git/github,Facile,a
+Comment créer une nouvelle branche en Git?,a) git branch,b) git checkout,c) git commit,d) git merge,git/github,Facile,a
+Quelle commande permet de visualiser l'historique des validations (commits) en Git?,a) git log,b) git status,c) git diff,d) git show,git/github,Facile,a
+Comment annuler le dernier commit sans perdre les modifications locales?,a) git reset,b) git revert,c) git commit --amend,d) git checkout,git/github,Facile,c
+Quelle commande fusionne une branche dans une autre en Git?,a) git merge,b) git branch,c) git commit,d) git pull,git/github,Facile,a
+"Que fait la commande ""git pull""?",a) Envoie les modifications locales au dépôt distant,b) Récupère les modifications du dépôt distant,c) Crée une nouvelle branche,d) Supprime une branche distante,git/github,Facile,a
+Comment supprimer une branche en Git?,a) git branch -r,b) git branch -d,c) git delete branch,d) git remove branch,git/github,Facile,b
+Quelle commande permet de renommer un fichier en Git?,a) git rename,b) git move,c) git mv,d) git cp,git/github,Facile,c
+"Quelle est la fonction de la commande ""git status""?",a) Affiche les informations sur les branches locales,b) Montre l'état des fichiers modifiés dans le répertoire de travail,c) Liste toutes les branches distantes,d) Crée une nouvelle validation,git/github,Facile,b
+Comment ignorer certains fichiers dans Git?,a) git exclude,b) git ignore,c) git skip,d) git hide,git/github,Intermediaire,b
+"Quelle est la différence entre ""git merge"" et ""git rebase""?",a) Aucune différence,"b) ""git merge"" combine les modifications, ""git rebase"" réécrit l'historique","c) ""git merge"" réécrit l'historique, ""git rebase"" combine les modifications","d) ""git merge"" est utilisé pour les branches locales, ""git rebase"" pour les branches distantes",git/github,Intermediaire,b
+Comment annuler les modifications locales non validées dans Git?,a) git reset --hard,b) git clean -f,c) git revert HEAD,d) git checkout -- .,git/github,Intermediaire,d
+Quelle commande permet de voir les différences entre deux branches en Git?,a) git compare,b) git diff,c) git merge --diff,d) git branch-diff,git/github,Intermediaire,b
+Comment renommer une branche distante en Git?,a) git remote-rename,b) git branch -m,c) git rename-remote,d) git remote mv,git/github,Intermediaire,d
+"Quelle commande permet de lister toutes les branches, y compris celles distantes?",a) git branch -a,b) git list-branches,c) git show-branches,d) git remote -v,git/github,Intermediaire,a
+Comment créer une étiquette (tag) annotée en Git?,a) git tag -a,b) git tag -l,c) git tag -m,d) git tag -t,git/github,Intermediaire,a
+Quelle commande permet de modifier le message du dernier commit?,a) git commit --modify,b) git commit --fix,c) git commit --amend,d) git commit --edit,git/github,Intermediaire,c
+Comment récupérer un seul fichier d'une validation antérieure en Git?,a) git restore,b) git checkout,c) git fetch,d) git pull,git/github,Intermediaire,b
+Quelle commande permet de créer une nouvelle branche et de basculer dessus en une seule étape?,a) git branch -c,b) git branch -n,c) git checkout -b,d) git checkout --new-branch,git/github,Intermediaire,c
+"Quelle est la différence entre ""git fetch"" et ""git pull""?",a) Aucune différence,"b) ""git fetch"" récupère les modifications sans les fusionner, ""git pull"" les fusionne immédiatement","c) ""git fetch"" fusionne les modifications, ""git pull"" récupère les modifications sans les fusionner","d) ""git fetch"" est obsolète, utilisez ""git pull""",git/github,Difficile,b
+Comment résoudre un conflit de fusion (merge conflict) en Git?,a) git resolve,b) git fix,c) git merge --resolve,d) git mergetool,git/github,Difficile,d
+Quelle commande permet de changer le dernier commit sans changer l'historique?,a) git commit --force,b) git commit --soft,c) git commit --reset,d) git commit --revert,git/github,Difficile,c
+Comment supprimer un tag en Git?,a) git tag --delete,b) git tag --remove,c) git remove-tag,d) git tag -d,git/github,Difficile,d
+Quelle commande permet de fusionner une branche sans créer de commit de fusion?,a) git merge --no-commit,b) git merge --squash,c) git merge --fast-forward,d) git merge --quiet,git/github,Difficile,a
+"Quelle est la fonction de la commande ""git stash""?",a) Supprime les modifications locales,b) Applique des modifications locales,c) Enregistre temporairement les modifications locales,d) Annule la dernière validation,git/github,Difficile,c
+Comment déplacer un commit vers une autre branche en Git?,a) git move-commit,b) git transfer-commit,c) git cherry-pick,d) git commit --move,git/github,Difficile,c
+Comment supprimer une branche distante en Git?,a) git remove-remote,b) git delete-remote,c) git remote -d,d) git remote --delete,git/github,Difficile,c
+Comment récupérer un commit spécifique d'une autre branche et l'appliquer à la branche actuelle en Git?,a) git apply-commit,b) git cherry-pick,c) git merge-commit,d) git extract-commit,git/github,Difficile,b
+Quelle commande permet de modifier l'historique des validations (commits) avant de les pousser vers le dépôt distant en Git?,a) git modify-history,b) git rebase,c) git amend,d) git push --force,git/github,Difficile,b
