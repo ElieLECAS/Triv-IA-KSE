@@ -6,7 +6,6 @@ import time
 class Plateau:
     def __init__(self):
         self.categories=['🟥','🟨','🟩','🟦','🟪','🟫']
-        # self.triangle_camembert=['🟥','🟨','🟩','🟦','🟪','🟫']
         self.grille = self.categories *3
         self.largeur_de_la_grille = len(self.grille)
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
@@ -32,47 +31,51 @@ class Plateau:
 
         if self.grille[joueur.x] =='🟥':
             if joueur.difficulte == "Facile":
-                print('rouge 1')
+                print('rouge Facile')
             if joueur.difficulte == "Intermediaire":
-                print('rouge 2')
+                print('rouge Intermediaire')
             if joueur.difficulte == "Difficle":
-                print('rouge 3')
+                print('rouge Difficle')
             
         elif self.grille[joueur.x] =='🟨':
             if joueur.difficulte == "Facile":
-                print('jaune 1')
+                print('jaune Facile')
             if joueur.difficulte == "Intermediaire":
-                print('jaune 2')
+                print('jaune Intermediaire')
             if joueur.difficulte == "Difficle":
-                print('jaune 3')
+                print('jaune Difficle')
+
         elif self.grille[joueur.x] =='🟩':
             if joueur.difficulte == "Facile":
-                print('vert 1')
+                print('vert Facile')
             if joueur.difficulte == "Intermediaire":
-                print('vert 2')
+                print('vert Intermediaire')
             if joueur.difficulte == "Difficle":
-                print('vert 3')
+                print('vert Difficle')
+
         elif self.grille[joueur.x] =='🟦':
             if joueur.difficulte == "Facile":
-                print('bleu 1')
+                print('bleu Facile')
             if joueur.difficulte == "Intermediaire":
-                print('bleu 2')
+                print('bleu Intermediaire')
             if joueur.difficulte == "Difficle":
-                print('bleu 3')
+                print('bleu Difficle')
+
         elif self.grille[joueur.x] =='🟪':
             if joueur.difficulte == "Facile":
-                print('violet 1')
+                print('violet Facile')
             if joueur.difficulte == "Intermediaire":
-                print('violet 2')
+                print('violet Intermediaire')
             if joueur.difficulte == "Difficle":
-                print('violet 3')
+                print('violet Difficle')
+
         elif self.grille[joueur.x] =='🟫':
             if joueur.difficulte == "Facile":
-                print('marron 1')
+                print('marron Facile')
             if joueur.difficulte == "Intermediaire":
-                print('marron 2')
+                print('marron Intermediaire')
             if joueur.difficulte == "Difficle":
-                print('marron 3')
+                print('marron Difficle')
 
 
     def debut_de_tour(self, joueur):
@@ -80,7 +83,7 @@ class Plateau:
         joueur.lance_de()                
         valeur_de= joueur.resultat
                 
-        plateau1.afficher_le_plateau()
+        self.afficher_le_plateau()
         print(f'\nC\'est le tour de {joueur.couleur} {joueur.nom_du_joueur} !\n\nTu as {len(joueur.score)} camemberts\n {joueur.score}\n\n')
         input("\nAppuie sur Entrée pour lancer le dé ! ")
 
@@ -88,8 +91,8 @@ class Plateau:
         
         print(f'Le lancer de dé donne  : {valeur_de}\n')
         joueur.deplacer_camembert()
-        plateau1.afficher_le_plateau()
-        plateau1.attribution_categorie(joueur)
+        self.afficher_le_plateau()
+        self.attribution_categorie(joueur)
 
 
     def questions_reponses(self, joueur):
@@ -108,7 +111,7 @@ class Plateau:
     def fin_de_tour(self, joueur):
         joueur.afficher_score()
         print(joueur.score)   
-        plateau1.afficher_le_plateau()
+        self.afficher_le_plateau()
         print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
         input('\nAppuie sur Entrée pour finir le tour !\n')
         
@@ -116,16 +119,16 @@ class Plateau:
     
     def deroulement (self):
         
-        plateau1.afficher_le_plateau()
+        self.afficher_le_plateau()
         for joueur in self.joueurs:
             joueur.attribution_couleur_pion()
 
         while len(joueur.score)<6:
             for joueur in self.joueurs:
 
-                plateau1.debut_de_tour(joueur)
-                plateau1.questions_reponses(joueur)
-                plateau1.fin_de_tour(joueur)
+                self.debut_de_tour(joueur)
+                self.questions_reponses(joueur)
+                self.fin_de_tour(joueur)
 
                 if len(joueur.score) == 6:
                     print("Gagné !\n")
