@@ -102,9 +102,9 @@ class Plateau:
             print('Bravo ! \n')
             joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
             if len(joueur.score) == 2:
-                joueur.difficulte += 1
+                joueur.difficulte = "Intermediaire"
             elif len(joueur.score) == 4:
-                joueur.difficulte += 1
+                joueur.difficulte = "Difficile"
         else:
             os.system('clear')
             print('Perdu ! \n')

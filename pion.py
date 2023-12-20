@@ -7,7 +7,7 @@ class Camembert:
         self.score= ()
         self.plateau = plateau
         self.couleur = None
-        self.difficulte = 1
+        self.difficulte = "Facile"
         self.nom_du_joueur= input("quel est votre nom? : ")
         self.x = 0
         self.resultat = None
