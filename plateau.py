@@ -84,7 +84,7 @@ class Plateau:
         os.system('clear')
         joueur.lance_de()                
         valeur_de= joueur.resultat
-        print(f'\nC\'est le tour de {joueur.nom_du_joueur} !\nTu as {len(joueur.score)} camemberts\n {joueur.score}')
+        print(f'\nC\'est le tour de {joueur.nom_du_joueur} !\nTu as {len(joueur.score)} camemberts\n {joueur.score}\n')
         
         plateau1.afficher_le_plateau()
         input("\nAppuie sur Entrée pour lancer le dé ! ")
