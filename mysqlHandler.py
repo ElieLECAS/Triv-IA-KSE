@@ -1,44 +1,57 @@
 import mysql.connector
+from mysql.connector import Error
+import pandas as pd
 
 class MySQLHandler:
     def __init__(self, host, user, password, database):
-        self.connection = mysql.connector.connect(
-            host = host,
-            user = user,
-            password = password,
-            database = database
-        )
-        self.cursor = self.connection.cursor()
+        try:
+            self.connection = mysql.connector.connect(
+                host = host,
+                user = user,
+                password = password,
+                database = database
+            )
+            self.cursor = self.connection.cursor()
+        except Error as e:
+            print (f"Erreur MySQL : {e}")
+
 
 # Methode de création de la table questions, avec énumérations pour les champs de catégorie et de difficulte
     def create_table_questions(self):
-        questionTbl = """
-            CREATE TABLE IF NOT EXISTS questions (
-                id_question INT AUTO_INCREMENT PRIMARY KEY,
-                intitule varchar(255),
-                choix1 varchar(255),
-                choix2 varchar(255),
-                choix3 varchar(255),
-                choix4 varchar(255),
-                categorie ENUM('SQL','Python','Ligne de commandes','Actualités IA', 'Git/GitHub','Thème mystère') NOT NULL,
-                difficulte ENUM('Facile','Intermediaire','Difficile') NOT NULL
-            );
-        """
-        self.cursor.execute(questionTbl)
-        self.connection.commit()
+        try:
+            questionTbl = """
+                CREATE TABLE IF NOT EXISTS questions (
+                    id_question INT AUTO_INCREMENT PRIMARY KEY,
+                    intitule varchar(255),
+                    choix1 varchar(255),
+                    choix2 varchar(255),
+                    choix3 varchar(255),
+                    choix4 varchar(255),
+                    categorie ENUM('SQL','Python','Ligne de commandes','Actualités IA', 'Git/GitHub','Thème mystère') NOT NULL,
+                    difficulte ENUM('Facile','Intermediaire','Difficile') NOT NULL
+                );
+            """
+            self.cursor.execute(questionTbl)
+            self.connection.commit()
+        except mysql.connector.IntegrityError as e:
+            print(f"Erreur d'intégrité MySQL : {e}")
+
 
 # Méthode de création de la table reponses, avec idQuestion qui pointe sur l'idQuestion de la table questions
     def create_table_reponses(self):
-        reponseTbl = """
-            CREATE TABLE IF NOT EXISTS reponses (
-                id_reponse INT AUTO_INCREMENT PRIMARY KEY,
-                id_question INT,
-                reponse_correcte VARCHAR(255),
-                FOREIGN KEY (id_question) REFERENCES questions(id_question)
-            );
-        """
-        self.cursor.execute(reponseTbl)
-        self.connection.commit()
+        try:
+            reponseTbl = """
+                CREATE TABLE IF NOT EXISTS reponses (
+                    id_reponse INT AUTO_INCREMENT PRIMARY KEY,
+                    id_question INT,
+                    reponse_correcte VARCHAR(255),
+                    FOREIGN KEY (id_question) REFERENCES questions(id_question)
+                );
+            """
+            self.cursor.execute(reponseTbl)
+            self.connection.commit()
+        except mysql.connector.IntegrityError as e:
+            print(f"Erreur d'intégrité MySQL : {e}")
 
 
 
@@ -51,13 +64,16 @@ class MySQLHandler:
 
     # En suivant le modèle CRUD, on créé les méthodes de création, de lecture, de mise à jour et de suppression des différentes itérations de chaque table
     def create_questions(self, intitule, choix1, choix2, choix3, choix4, id_categorie, id_difficulte):
-        new = """
-            INSERT INTO questions (intitule, choix1, choix2, choix3, choix4, categorie, difficulte)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """
-        values = (intitule, choix1, choix2, choix3, choix4, id_categorie, id_difficulte)
-        self.cursor.execute(new, values)
-        self.connection.commit()
+        try:
+            new = """
+                INSERT INTO questions (intitule, choix1, choix2, choix3, choix4, categorie, difficulte)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """
+            values = (intitule, choix1, choix2, choix3, choix4, id_categorie, id_difficulte)
+            self.cursor.execute(new, values)
+            self.connection.commit()
+        except mysql.connector.ProgrammingError as e:
+            print(f"Erreur de programmation SQL : {e}")
 
 
     def read_questions(self,params):
@@ -67,19 +83,22 @@ class MySQLHandler:
     
 
     def update_questions(self, id_question, new_intitule, new_choix1, new_choix2, new_choix3, new_choix4, new_categorie, new_difficulte):
-        updating = """
-            UPDATE questions SET
-            intitule = %s,
-            choix1 = %s,
-            choix2 = %s,
-            choix3 = %s,
-            choix4 = %s,
-            categorie = %s,
-            difficulte = %s WHERE id_question = %d
-        """
-        new_values = (new_intitule, new_choix1, new_choix2, new_choix3, new_choix4, new_categorie, new_difficulte, id_question)
-        self.cursor.execute(updating, new_values)
-        self.connection.commit()
+        try:
+            updating = """
+                UPDATE questions SET
+                intitule = %s,
+                choix1 = %s,
+                choix2 = %s,
+                choix3 = %s,
+                choix4 = %s,
+                categorie = %s,
+                difficulte = %s WHERE id_question = %d
+            """
+            new_values = (new_intitule, new_choix1, new_choix2, new_choix3, new_choix4, new_categorie, new_difficulte, id_question)
+            self.cursor.execute(updating, new_values)
+            self.connection.commit()
+        except mysql.connector.ProgrammingError as e:
+            print(f"Erreur de programmation SQL : {e}")
 
 
     def delete_questions(self, id_question):
@@ -88,11 +107,34 @@ class MySQLHandler:
         self.connection.commit()
 
 
+    def importer_questions_csv(self, file_path):
+        try:
+            # Lire le fichier CSV avec pandas
+            datafile = pd.read_csv(file_path)
+
+            # Parcourir les lignes du DataFrame et insérer dans la table
+            for index, row in datafile.iterrows():
+                query = """
+                    INSERT INTO questions (intitule, choix1, choix2, choix3, choix4, categorie, difficulte)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """
+                values = tuple(row)
+                self.cursor.execute(query, values)
+
+            # Commit et fermer la connexion
+            self.connection.commit()
+            print("Importation réussie.")
+        except Exception as e:
+            print(f"Erreur : {e}")
+
+
 
 access = MySQLHandler(host='localhost' , user='root' , password='psswd' , database='trivia_db')
 access.create_table_questions()
 access.create_table_reponses()
+access.importer_questions_csv('/questions.csv')
 print(access.read_questions())
+access.close_connection()
 
 
 

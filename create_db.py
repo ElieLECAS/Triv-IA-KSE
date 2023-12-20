@@ -12,7 +12,7 @@ db = mysql.connector.connect(
 c = db.cursor()
  
 # executing the create database statement
-c.execute("CREATE DATABASE trivia_db")
+c.execute("CREATE DATABASE IF NOT EXISTS trivia_db")
  
 # fetching all the databases
 c.execute("SHOW DATABASES")
