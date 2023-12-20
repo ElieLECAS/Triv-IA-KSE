@@ -1,94 +1,92 @@
 intitule,choix1,choix2,choix3,choix4,categorie,difficulte,
-Quelle commande Git permet de cloner un dépôt distant?,a) git init,b) git clone,c) git pull,d) git push,Git/Github,Facile,b
-"Que fait la commande ""git add""?",a) Valide les modifications,b) Ajoute des fichiers à l'index,c) Supprime des fichiers du dépôt,d) Crée une nouvelle branche,Git/Github,Facile,a
-Comment créer une nouvelle branche en Git?,a) git branch,b) git checkout,c) git commit,d) git merge,Git/Github,Facile,a
-Quelle commande permet de visualiser l'historique des validations (commits) en Git?,a) git log,b) git status,c) git diff,d) git show,Git/Github,Facile,a
-Comment annuler le dernier commit sans perdre les modifications locales?,a) git reset,b) git revert,c) git commit --amend,d) git checkout,Git/Github,Facile,c
-Quelle commande fusionne une branche dans une autre en Git?,a) git merge,b) git branch,c) git commit,d) git pull,Git/Github,Facile,a
-"Que fait la commande ""git pull""?",a) Envoie les modifications locales au dépôt distant,b) Récupère les modifications du dépôt distant,c) Crée une nouvelle branche,d) Supprime une branche distante,Git/Github,Facile,a
-Comment supprimer une branche en Git?,a) git branch -r,b) git branch -d,c) git delete branch,d) git remove branch,Git/Github,Facile,b
-Quelle commande permet de renommer un fichier en Git?,a) git rename,b) git move,c) git mv,d) git cp,Git/Github,Facile,c
-"Quelle est la fonction de la commande ""git status""?",a) Affiche les informations sur les branches locales,b) Montre l'état des fichiers modifiés dans le répertoire de travail,c) Liste toutes les branches distantes,d) Crée une nouvelle validation,Git/Github,Facile,b
-Comment ignorer certains fichiers dans Git?,a) git exclude,b) git ignore,c) git skip,d) git hide,Git/Github,Intermediaire,b
-"Quelle est la différence entre ""git merge"" et ""git rebase""?",a) Aucune différence,"b) ""git merge"" combine les modifications, ""git rebase"" réécrit l'historique","c) ""git merge"" réécrit l'historique, ""git rebase"" combine les modifications","d) ""git merge"" est utilisé pour les branches locales, ""git rebase"" pour les branches distantes",Git/Github,Intermediaire,b
-Comment annuler les modifications locales non validées dans Git?,a) git reset --hard,b) git clean -f,c) git revert HEAD,d) git checkout -- .,Git/Github,Intermediaire,d
-Quelle commande permet de voir les différences entre deux branches en Git?,a) git compare,b) git diff,c) git merge --diff,d) git branch-diff,Git/Github,Intermediaire,b
-Comment renommer une branche distante en Git?,a) git remote-rename,b) git branch -m,c) git rename-remote,d) git remote mv,Git/Github,Intermediaire,d
-"Quelle commande permet de lister toutes les branches, y compris celles distantes?",a) git branch -a,b) git list-branches,c) git show-branches,d) git remote -v,Git/Github,Intermediaire,a
-Comment créer une étiquette (tag) annotée en Git?,a) git tag -a,b) git tag -l,c) git tag -m,d) git tag -t,Git/Github,Intermediaire,a
-Quelle commande permet de modifier le message du dernier commit?,a) git commit --modify,b) git commit --fix,c) git commit --amend,d) git commit --edit,Git/Github,Intermediaire,c
-Comment récupérer un seul fichier d'une validation antérieure en Git?,a) git restore,b) git checkout,c) git fetch,d) git pull,Git/Github,Intermediaire,b
-Quelle commande permet de créer une nouvelle branche et de basculer dessus en une seule étape?,a) git branch -c,b) git branch -n,c) git checkout -b,d) git checkout --new-branch,Git/Github,Intermediaire,c
-"Quelle est la différence entre ""git fetch"" et ""git pull""?",a) Aucune différence,"b) ""git fetch"" récupère les modifications sans les fusionner, ""git pull"" les fusionne immédiatement","c) ""git fetch"" fusionne les modifications, ""git pull"" récupère les modifications sans les fusionner","d) ""git fetch"" est obsolète, utilisez ""git pull""",Git/Github,Difficile,b
-Comment résoudre un conflit de fusion (merge conflict) en Git?,a) git resolve,b) git fix,c) git merge --resolve,d) git mergetool,Git/Github,Difficile,d
-Quelle commande permet de changer le dernier commit sans changer l'historique?,a) git commit --force,b) git commit --soft,c) git commit --reset,d) git commit --revert,Git/Github,Difficile,c
-Comment supprimer un tag en Git?,a) git tag --delete,b) git tag --remove,c) git remove-tag,d) git tag -d,Git/Github,Difficile,d
-Quelle commande permet de fusionner une branche sans créer de commit de fusion?,a) git merge --no-commit,b) git merge --squash,c) git merge --fast-forward,d) git merge --quiet,Git/Github,Difficile,a
-"Quelle est la fonction de la commande ""git stash""?",a) Supprime les modifications locales,b) Applique des modifications locales,c) Enregistre temporairement les modifications locales,d) Annule la dernière validation,Git/Github,Difficile,c
-Comment déplacer un commit vers une autre branche en Git?,a) git move-commit,b) git transfer-commit,c) git cherry-pick,d) git commit --move,Git/Github,Difficile,c
-Comment supprimer une branche distante en Git?,a) git remove-remote,b) git delete-remote,c) git remote -d,d) git remote --delete,Git/Github,Difficile,c
-Comment récupérer un commit spécifique d'une autre branche et l'appliquer à la branche actuelle en Git?,a) git apply-commit,b) git cherry-pick,c) git merge-commit,d) git extract-commit,Git/Github,Difficile,b
-Quelle commande permet de modifier l'historique des validations (commits) avant de les pousser vers le dépôt distant en Git?,a) git modify-history,b) git rebase,c) git amend,d) git push --force,Git/Github,Difficile,b
+Quelle commande Git permet de cloner un dépôt distant?,git init,git clone,git pull,git push,Git/Github,Facile,b
+"Que fait la commande ""git add""?",Valide les modifications,Ajoute des fichiers à l'index,Supprime des fichiers du dépôt,Crée une nouvelle branche,Git/Github,Facile,a
+Comment créer une nouvelle branche en Git?,git branch,git checkout,git commit,git merge,Git/Github,Facile,a
+Quelle commande permet de visualiser l'historique des validations (commits) en Git?,git log,git status,git diff,git show,Git/Github,Facile,a
+Comment annuler le dernier commit sans perdre les modifications locales?,git reset,git revert,git commit --amend,git checkout,Git/Github,Facile,c
+Quelle commande fusionne une branche dans une autre en Git?,git merge,git branch,git commit,git pull,Git/Github,Facile,a
+"Que fait la commande ""git pull""?",Envoie les modifications locales au dépôt distant,Récupère les modifications du dépôt distant,Crée une nouvelle branche,Supprime une branche distante,Git/Github,Facile,a
+Comment supprimer une branche en Git?,git branch -r,git branch -d,git delete branch,git remove branch,Git/Github,Facile,b
+Quelle commande permet de renommer un fichier en Git?,git rename,git move,git mv,git cp,Git/Github,Facile,c
+"Quelle est la fonction de la commande ""git status""?",Affiche les informations sur les branches locales,Montre l'état des fichiers modifiés dans le répertoire de travail,Liste toutes les branches distantes,Crée une nouvelle validation,Git/Github,Facile,b
+Comment ignorer certains fichiers dans Git?,git exclude,git ignore,git skip,git hide,Git/Github,Intermediaire,b
+"Quelle est la différence entre ""git merge"" et ""git rebase""?",Aucune différence,"""git merge"" combine les modifications, ""git rebase"" réécrit l'historique","""git merge"" réécrit l'historique, ""git rebase"" combine les modifications","""git merge"" est utilisé pour les branches locales, ""git rebase"" pour les branches distantes",Git/Github,Intermediaire,b
+Comment annuler les modifications locales non validées dans Git?,git reset --hard,git clean -f,git revert HEAD,git checkout -- .,Git/Github,Intermediaire,d
+Quelle commande permet de voir les différences entre deux branches en Git?,git compare,git diff,git merge --diff,git branch-diff,Git/Github,Intermediaire,b
+Comment renommer une branche distante en Git?,git remote-rename,git branch -m,git rename-remote,git remote mv,Git/Github,Intermediaire,d
+"Quelle commande permet de lister toutes les branches, y compris celles distantes?",git branch -a,git list-branches,git show-branches,git remote -v,Git/Github,Intermediaire,a
+Comment créer une étiquette (tag) annotée en Git?,git tag -a,git tag -l,git tag -m,git tag -t,Git/Github,Intermediaire,a
+Quelle commande permet de modifier le message du dernier commit?,git commit --modify,git commit --fix,git commit --amend,git commit --edit,Git/Github,Intermediaire,c
+Comment récupérer un seul fichier d'une validation antérieure en Git?,git restore,git checkout,git fetch,git pull,Git/Github,Intermediaire,b
+Quelle commande permet de créer une nouvelle branche et de basculer dessus en une seule étape?,git branch -c,git branch -n,git checkout -b,git checkout --new-branch,Git/Github,Intermediaire,c
+"Quelle est la différence entre ""git fetch"" et ""git pull""?",Aucune différence,"""git fetch"" récupère les modifications sans les fusionner, ""git pull"" les fusionne immédiatement","""git fetch"" fusionne les modifications, ""git pull"" récupère les modifications sans les fusionner","""git fetch"" est obsolète, utilisez ""git pull""",Git/Github,Difficile,b
+Comment résoudre un conflit de fusion (merge conflict) en Git?,git resolve,git fix,git merge --resolve,git mergetool,Git/Github,Difficile,d
+Quelle commande permet de changer le dernier commit sans changer l'historique?,git commit --force,git commit --soft,git commit --reset,git commit --revert,Git/Github,Difficile,c
+Comment supprimer un tag en Git?,git tag --delete,git tag --remove,git remove-tag,git tag -d,Git/Github,Difficile,d
+Quelle commande permet de fusionner une branche sans créer de commit de fusion?,git merge --no-commit,git merge --squash,git merge --fast-forward,git merge --quiet,Git/Github,Difficile,a
+"Quelle est la fonction de la commande ""git stash""?",Supprime les modifications locales,Applique des modifications locales,Enregistre temporairement les modifications locales,Annule la dernière validation,Git/Github,Difficile,c
+Comment déplacer un commit vers une autre branche en Git?,git move-commit,git transfer-commit,git cherry-pick,git commit --move,Git/Github,Difficile,c
+Comment supprimer une branche distante en Git?,git remove-remote,git delete-remote,git remote -d,git remote --delete,Git/Github,Difficile,c
+Comment récupérer un commit spécifique d'une autre branche et l'appliquer à la branche actuelle en Git?,git apply-commit,git cherry-pick,git merge-commit,git extract-commit,Git/Github,Difficile,b
+Quelle commande permet de modifier l'historique des validations (commits) avant de les pousser vers le dépôt distant en Git?,git modify-history,git rebase,git amend,git push --force,Git/Github,Difficile,b
+Comment créer un répertoire (dossier) en ligne de commande?,mkdir,touch,ls,rm,Ligne de commandes,Facile,a
+Quelle commande affiche le répertoire de travail actuel?,ls,pwd,cd,dir,Ligne de commandes,Facile,b
+Comment copier un fichier en utilisant la ligne de commande?,cp,mv,copy,duplicate,Ligne de commandes,Facile,a
+Quelle commande permet de supprimer un fichier?,rm,del,erase,delete,Ligne de commandes,Facile,a
+Comment afficher le contenu d'un fichier texte dans la console?,cat,type,more,display,Ligne de commandes,Facile,a
+Quelle commande permet de changer de répertoire?,cd,chdir,change,dir,Ligne de commandes,Facile,a
+Comment créer un fichier vide en ligne de commande?,touch,create,newfile,addfile,Ligne de commandes,Facile,a
+Quelle commande permet d'afficher les processus en cours d'exécution?,ps,top,list,show,Ligne de commandes,Facile,a
+Comment revenir au répertoire précédent?,cd -,cd ..,cd back,cd prev,Ligne de commandes,Facile,a
+Quelle commande permet de déplacer un fichier vers un autre répertoire?,mv,move,cp,copy,Ligne de commandes,Facile,a
+Comment afficher l'espace disque disponible sur un système de fichiers?,df,disk,space,free,Ligne de commandes,Intermediaire,a
+Quelle commande permet de trouver des fichiers dans un répertoire?,find,search,locate,query,Ligne de commandes,Intermediaire,a
+Comment créer une archive compressée d'un répertoire?,zip,compress,tar,gzip,Ligne de commandes,Intermediaire,c
+Quelle commande permet d'éditer un fichier texte dans la console?,edit,nano,write,notepad,Ligne de commandes,Intermediaire,b
+Comment afficher les 10 premières lignes d'un fichier texte?,head,top,first,lines,Ligne de commandes,Intermediaire,a
+Quelle commande permet de donner des permissions d'exécution à un fichier?,chmod +x,exec,allow,permit,Ligne de commandes,Intermediaire,a
+Comment renommer un fichier en ligne de commande?,rename,mv,ren,change,Ligne de commandes,Intermediaire,b
+Quelle commande permet de voir les dernières lignes d'un fichier texte?,tail,bottom,end,last,Ligne de commandes,Intermediaire,a
+Comment créer une variable d'environnement permanente?,set,export,env,variable,Ligne de commandes,Intermediaire,b
+Quelle commande permet d'afficher l'adresse IP d'une machine?,ipconfig,ifconfig,netconfig,address,Ligne de commandes,Intermediaire,b
+Quelle commande permet de rechercher du texte à l'intérieur de fichiers?,grep,search,findtext,locate,Ligne de commandes,Difficile,a
+Comment créer un lien symbolique vers un fichier ou un répertoire?,link,ln,symlink,mklink,Ligne de commandes,Difficile,b
+Quelle commande permet de vider le contenu d'un fichier sans le supprimer?,clear,empty,truncate,delete,Ligne de commandes,Difficile,c
+Comment créer une tâche planifiée (cron joen ligne de commande?,cron,schedule,crontab,task,Ligne de commandes,Difficile,c
+Quelle commande permet de voir les détails sur le matériel du système?,hardware,info,lspci,systeminfo,Ligne de commandes,Difficile,c
+Comment supprimer récursivement un répertoire?,rmdir,remove,delete,rm -r,Ligne de commandes,Difficile,d
+Quelle commande permet d'afficher les utilisateurs connectés?,users,who,online,active,Ligne de commandes,Difficile,b
+Comment ajouter un utilisateur à un groupe en ligne de commande?,usermod,adduser,groupadd,useradd,Ligne de commandes,Difficile,a
+Quelle commande permet de redémarrer le système?,restart,reboot,shutdown -r,start,Ligne de commandes,Difficile,b
+Comment changer les permissions d'un fichier de manière récursive?,chmod -r,chperm -r,chown -R,permchange -r,Ligne de commandes,Difficile,c
 ,,,,,,,
-,,,,,,,
-Comment créer un répertoire (dossier) en ligne de commande?,a) mkdir,b) touch,c) ls,d) rm,Ligne de commandes,Facile,a
-Quelle commande affiche le répertoire de travail actuel?,a) ls,b) pwd,c) cd,d) dir,Ligne de commandes,Facile,b
-Comment copier un fichier en utilisant la ligne de commande?,a) cp,b) mv,c) copy,d) duplicate,Ligne de commandes,Facile,a
-Quelle commande permet de supprimer un fichier?,a) rm,b) del,c) erase,d) delete,Ligne de commandes,Facile,a
-Comment afficher le contenu d'un fichier texte dans la console?,a) cat,b) type,c) more,d) display,Ligne de commandes,Facile,a
-Quelle commande permet de changer de répertoire?,a) cd,b) chdir,c) change,d) dir,Ligne de commandes,Facile,a
-Comment créer un fichier vide en ligne de commande?,a) touch,b) create,c) newfile,d) addfile,Ligne de commandes,Facile,a
-Quelle commande permet d'afficher les processus en cours d'exécution?,a) ps,b) top,c) list,d) show,Ligne de commandes,Facile,a
-Comment revenir au répertoire précédent?,a) cd -,b) cd ..,c) cd back,d) cd prev,Ligne de commandes,Facile,a
-Quelle commande permet de déplacer un fichier vers un autre répertoire?,a) mv,b) move,c) cp,d) copy,Ligne de commandes,Facile,a
-Comment afficher l'espace disque disponible sur un système de fichiers?,a) df,b) disk,c) space,d) free,Ligne de commandes,Intermediaire,a
-Quelle commande permet de trouver des fichiers dans un répertoire?,a) find,b) search,c) locate,d) query,Ligne de commandes,Intermediaire,a
-Comment créer une archive compressée d'un répertoire?,a) zip,b) compress,c) tar,d) gzip,Ligne de commandes,Intermediaire,c
-Quelle commande permet d'éditer un fichier texte dans la console?,a) edit,b) nano,c) write,d) notepad,Ligne de commandes,Intermediaire,b
-Comment afficher les 10 premières lignes d'un fichier texte?,a) head,b) top,c) first,d) lines,Ligne de commandes,Intermediaire,a
-Quelle commande permet de donner des permissions d'exécution à un fichier?,a) chmod +x,b) exec,c) allow,d) permit,Ligne de commandes,Intermediaire,a
-Comment renommer un fichier en ligne de commande?,a) rename,b) mv,c) ren,d) change,Ligne de commandes,Intermediaire,b
-Quelle commande permet de voir les dernières lignes d'un fichier texte?,a) tail,b) bottom,c) end,d) last,Ligne de commandes,Intermediaire,a
-Comment créer une variable d'environnement permanente?,a) set,b) export,c) env,d) variable,Ligne de commandes,Intermediaire,b
-Quelle commande permet d'afficher l'adresse IP d'une machine?,a) ipconfig,b) ifconfig,c) netconfig,d) address,Ligne de commandes,Intermediaire,b
-Quelle commande permet de rechercher du texte à l'intérieur de fichiers?,a) grep,b) search,c) findtext,d) locate,Ligne de commandes,Difficile,a
-Comment créer un lien symbolique vers un fichier ou un répertoire?,a) link,b) ln,c) symlink,d) mklink,Ligne de commandes,Difficile,b
-Quelle commande permet de vider le contenu d'un fichier sans le supprimer?,a) clear,b) empty,c) truncate,d) delete,Ligne de commandes,Difficile,c
-Comment créer une tâche planifiée (cron job) en ligne de commande?,a) cron,b) schedule,c) crontab,d) task,Ligne de commandes,Difficile,c
-Quelle commande permet de voir les détails sur le matériel du système?,a) hardware,b) info,c) lspci,d) systeminfo,Ligne de commandes,Difficile,c
-Comment supprimer récursivement un répertoire?,a) rmdir,b) remove,c) delete,d) rm -r,Ligne de commandes,Difficile,d
-Quelle commande permet d'afficher les utilisateurs connectés?,a) users,b) who,c) online,d) active,Ligne de commandes,Difficile,b
-Comment ajouter un utilisateur à un groupe en ligne de commande?,a) usermod,b) adduser,c) groupadd,d) useradd,Ligne de commandes,Difficile,a
-Quelle commande permet de redémarrer le système?,a) restart,b) reboot,c) shutdown -r,d) start,Ligne de commandes,Difficile,b
-Comment changer les permissions d'un fichier de manière récursive?,a) chmod -r,b) chperm -r,c) chown -R,d) permchange -r,Ligne de commandes,Difficile,c
-,,,,,,,
-Comment déclare-t-on une variable en Python? ,a) variable = 5 ,b) variable := 5 ,c) variable ← 5 ,d) variable >> 5 ,Python,Facile,a
-Quelle est la fonction utilisée pour afficher du texte à l'écran en Python? ,a) printText() ,b) echo() ,c) display() ,d) print() ,Python,Facile,d
-Quelle est la méthode pour obtenir la longueur d'une liste en Python? ,a) lenOfList() ,b) length() ,c) len() ,d) listLength() ,Python,Facile,c
-Comment définir une fonction en Python? ,a) def functionName(): ,b) function functionName(): ,c) define functionName(): ,d) functionName = def(): ,Python,Facile,a
-Quel opérateur est utilisé pour la concaténation de chaînes de caractères en Python? ,a) + ,b) * ,c) - ,d) / ,Python,Facile,a
-Quel opérateur est utilisé pour la division entière en Python? ,a) / ,b) // ,c) % ,d) div ,Python,Facile,b
-Comment convertir une chaîne de caractères en majuscules en Python? ,a) to_upper() ,b) uppercase() ,c) upper() ,d) capitalize() ,Python,Facile,c
-Quelle méthode est utilisée pour ajouter un élément à la fin d'une liste en Python? ,a) add() ,b) append() ,c) insert() ,d) extend() ,Python,Facile,b
-"Quelle est la sortie de print(""Hello"" * 3) en Python? ",a) Hello ,b) Hello Hello ,c) HelloHelloHello ,d) 3Hello ,Python,Facile,c
-Comment obtenir la partie entière d'un nombre à virgule flottante en Python? ,a) float_part() ,b) fractional() ,c) int() ,d) round() ,Python,Facile,b
-Quelle est la différence entre les listes et les tuples en Python? ,"a) Les listes sont immuables, les tuples sont mutables. ","b) Les listes sont ordonnées, les tuples ne le sont pas. ","c) Les listes sont indexées, les tuples ne le sont pas. ",d) Il n'y a pas de différence. ,Python,Intermediaire,b
-Comment ouvrir un fichier en mode écriture (write) en Python? ,"a) file = open(""example.txt"", ""w"") ","b) file = open(""example.txt"", ""r"") ","c) file = open(""example.txt"", ""a"") ","d) file = open(""example.txt"", ""x"") ",Python,Intermediaire,a
-Quelle est la fonction pour générer un nombre aléatoire en Python? ,a) randomNumber() ,b) rand() ,c) random() ,d) generateRandom() ,Python,Intermediaire,d
-Quelle méthode est utilisée pour supprimer un élément d'un dictionnaire en Python? ,a) delete() ,b) remove() ,c) pop() ,d) discard() ,Python,Intermediaire,c
-Quel est le résultat de l'expression 3 * 'abc' en Python? ,a) abc ,b) abcabcabc ,c) 333 ,d) Une erreur ,Python,Intermediaire,b
-Quelle est la différence entre == et is en Python? ,"a) Aucune différence, ils sont interchangeables. ","b) == compare les valeurs, is compare les identités des objets. ","c) == compare les identités des objets, is compare les valeurs. ","d) == est utilisé pour la comparaison de chaînes, is est utilisé pour la comparaison d'objets. ",Python,Intermediaire,b
-Comment obtenir la clé maximale dans un dictionnaire en Python? ,a) max_key() ,b) largest_key() ,c) max(d.keys()) ,d) d.max_key() ,Python,Intermediaire,c
-Quelle est la différence entre shallow copy et deep copy en Python? ,a) Aucune différence. ,"b) shallow copy copie également les objets imbriqués, deep copy ne les copie pas. ","c) deep copy copie également les objets imbriqués, shallow copy ne les copie pas. ","d) shallow copy crée une copie indépendante, deep copy crée une référence à l'objet original. ",Python,Intermediaire,d
-Comment supprimer un élément à une position spécifique d'une liste en Python? ,a) remove(position) ,b) delete(position) ,c) pop(position) ,d) discard(position) ,Python,Intermediaire,c
-"Quelle est la sortie de print(""{:.2f}"".format(123.456)) en Python? ",a) 123.46 ,b) 123.45600 ,c) 123.00 ,d) 123.45 ,Python,Intermediaire,a
-Comment créer une classe abstraite en Python? ,a) class AbstractClass: ,b) class AbstractClass(metaclass=ABC): ,c) abstract class AbstractClass: ,d) class AbstractClass(abstract): ,Python,Difficile,b
-Quelle est la principale différence entre map() et filter() en Python? ,"a) map() applique une fonction à chaque élément, filter() filtre les éléments d'une séquence. ","b) map() filtre les éléments d'une séquence, filter() applique une fonction à chaque élément. ",c) map() et filter() sont équivalents. ,d) map() et filter() sont obsolètes. ,Python,Difficile,a
-Comment générer une liste en utilisant une expression de compréhension de liste en Python? ,a) [x for x in range(10)] ,b) {x for x in range(10)} ,c) (x for x in range(10)) ,d) <x for x in range(10)> ,Python,Difficile,a
-Quelle est la méthode utilisée pour élever un nombre à une puissance en Python? ,a) power() ,b) exp() ,c) ** ,d) ^ ,Python,Difficile,c
-Comment gérer une exception en Python? ,a) try { /* code */ } catch { /* exception handling */ } ,b) try: # code except Exception: # exception handling ,c) if Exception: # exception handling else: # code ,d) exception { // code } ,Python,Difficile,b
-Quelle est la différence entre __str__ et __repr__ en Python? ,a) Aucune différence. ,"b) __str__ est utilisé pour l'affichage informel, __repr__ pour la représentation formelle. ","c) __repr__ est utilisé pour l'affichage informel, __str__ pour la représentation formelle. ","d) __str__ est utilisé pour la représentation formelle, __repr__ pour l'affichage informel. ",Python,Difficile,b
-Comment obtenir la date et l'heure actuelles en Python? ,a) current_time() ,b) datetime.now() ,c) get_current_datetime() ,d) time.now() ,Python,Difficile,b
-Quelle méthode est utilisée pour trier une liste en Python? ,a) sort() ,b) order() ,c) arrange() ,d) organized() ,Python,Difficile,a
-Comment définir une valeur par défaut pour un argument de fonction en Python? ,"a) def function(arg1, arg2=10): ","b) def function(arg1=10, arg2): ","c) def function(arg1=10, arg2=20): ","d) def function(arg1, arg2): default arg2=10 ",Python,Difficile,c
-Quelle est la signification de __init__ dans une classe Python? ,a) Initialiser une variable. ,b) Appeler un constructeur. ,c) Initialiser un objet. ,d) Déclarer une classe. ,Python,Difficile,c
+Comment déclare-t-on une variable en Python? , variable = 5 , variable := 5 ,variable ← 5 , variable >> 5 ,Python,Facile,a
+Quelle est la fonction utilisée pour afficher du texte à l'écran en Python? , printText() , echo() , display() , print() ,Python,Facile,d
+Quelle est la méthode pour obtenir la longueur d'une liste en Python? , lenOfList() , length() , len() , listLength() ,Python,Facile,c
+Comment définir une fonction en Python? , def functionName(): , function functionName(): , define functionName(): , functionName = def(): ,Python,Facile,a
+Quel opérateur est utilisé pour la concaténation de chaînes de caractères en Python? , + , * , - , / ,Python,Facile,a
+Quel opérateur est utilisé pour la division entière en Python? , / , // , % , div ,Python,Facile,b
+Comment convertir une chaîne de caractères en majuscules en Python? , to_upper() , uppercase() , upper() , capitalize() ,Python,Facile,c
+Quelle méthode est utilisée pour ajouter un élément à la fin d'une liste en Python? , add() , append() , insert() , extend() ,Python,Facile,b
+"Quelle est la sortie de print(""Hello"" * 3) en Python? ", Hello , Hello Hello , HelloHelloHello , 3Hello ,Python,Facile,c
+Comment obtenir la partie entière d'un nombre à virgule flottante en Python? , float_part() , fractional() , int() , round() ,Python,Facile,b
+Quelle est la différence entre les listes et les tuples en Python? ," Les listes sont immuables, les tuples sont mutables. "," Les listes sont ordonnées, les tuples ne le sont pas. "," Les listes sont indexées, les tuples ne le sont pas. ", Il n'y a pas de différence. ,Python,Intermediaire,b
+Comment ouvrir un fichier en mode écriture (write) en Python? ," file = open(""example.txt"", ""w"") "," file = open(""example.txt"", ""r"") "," file = open(""example.txt"", ""a"") "," file = open(""example.txt"", ""x"") ",Python,Intermediaire,a
+Quelle est la fonction pour générer un nombre aléatoire en Python? , randomNumber() , rand() , random() , generateRandom() ,Python,Intermediaire,d
+Quelle méthode est utilisée pour supprimer un élément d'un dictionnaire en Python? , delete() , remove() , pop() , discard() ,Python,Intermediaire,c
+Quel est le résultat de l'expression 3 * 'abc' en Python? , abc , abcabcabc ,333, Une erreur ,Python,Intermediaire,b
+Quelle est la différence entre == et is en Python? ," Aucune différence, ils sont interchangeables. "," == compare les valeurs, is compare les identités des objets. "," == compare les identités des objets, is compare les valeurs. "," == est utilisé pour la comparaison de chaînes, is est utilisé pour la comparaison d'objets. ",Python,Intermediaire,b
+Comment obtenir la clé maximale dans un dictionnaire en Python? , max_key() , largest_key() , max(d.keys()) , d.max_key() ,Python,Intermediaire,c
+Quelle est la différence entre shallow copy et deep copy en Python? , Aucune différence. ," shallow copy copie également les objets imbriqués, deep copy ne les copie pas. "," deep copy copie également les objets imbriqués, shallow copy ne les copie pas. "," shallow copy crée une copie indépendante, deep copy crée une référence à l'objet original. ",Python,Intermediaire,d
+Comment supprimer un élément à une position spécifique d'une liste en Python? , remove(position) , delete(position) , pop(position) , discard(position) ,Python,Intermediaire,c
+"Quelle est la sortie de print(""{:.2f}"".format(123.456)) en Python? ", 123.46 , 123.45600 , 123.00 , 123.45 ,Python,Intermediaire,a
+Comment créer une classe abstraite en Python? , class AbstractClass: , class AbstractClass(metaclass=AB: , abstract class AbstractClass: , class AbstractClass(abstract): ,Python,Difficile,b
+Quelle est la principale différence entre map() et filter() en Python? ," map() applique une fonction à chaque élément, filter() filtre les éléments d'une séquence. "," map() filtre les éléments d'une séquence, filter() applique une fonction à chaque élément. ", map() et filter() sont équivalents. , map() et filter() sont obsolètes. ,Python,Difficile,a
+Comment générer une liste en utilisant une expression de compréhension de liste en Python? , [x for x in range(10)] , {x for x in range(10)} , (x for x in range(10)) , <x for x in range(10)> ,Python,Difficile,a
+Quelle est la méthode utilisée pour élever un nombre à une puissance en Python? , power() , exp() , ** , ^ ,Python,Difficile,c
+Comment gérer une exception en Python? , try { /* code */ } catch { /* exception handling */ } , try: # code except Exception: # exception handling , if Exception: # exception handling else: # code , exception { // code } ,Python,Difficile,b
+Quelle est la différence entre __str__ et __repr__ en Python? , Aucune différence. ," __str__ est utilisé pour l'affichage informel, __repr__ pour la représentation formelle. "," __repr__ est utilisé pour l'affichage informel, __str__ pour la représentation formelle. "," __str__ est utilisé pour la représentation formelle, __repr__ pour l'affichage informel. ",Python,Difficile,b
+Comment obtenir la date et l'heure actuelles en Python? , current_time() , datetime.now() , get_current_datetime() , time.now() ,Python,Difficile,b
+Quelle méthode est utilisée pour trier une liste en Python? , sort() , order() , arrange() , organized() ,Python,Difficile,a
+Comment définir une valeur par défaut pour un argument de fonction en Python? ," def function(arg1, arg2=10): "," def function(arg1=10, arg2): "," def function(arg1=10, arg2=20): "," def function(arg1, arg2): default arg2=10 ",Python,Difficile,c
+Quelle est la signification de __init__ dans une classe Python? , Initialiser une variable. , Appeler un constructeur. , Initialiser un objet. , Déclarer une classe. ,Python,Difficile,c
