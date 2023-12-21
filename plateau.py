@@ -14,6 +14,7 @@ class Plateau:
         self.joueurs = []
         self.tableau_de_scores = []
         self.access= access
+           
        
  
 
@@ -32,77 +33,80 @@ class Plateau:
     
     def attribution_categorie(self,joueur):
 
-        if self.grille[joueur.x] =='🟥':
-            if joueur.difficulte == "Facile":
-                params=('SQL','Facile')
-                return params
-            if joueur.difficulte == "Intermediaire":
-                params=('SQL','Intermediaire')
-                return params
-            if joueur.difficulte == "Difficile":
-                params=('SQL','Difficile')
-                return params
+        # if self.grille[joueur.x] =='🟥':
+        #     if joueur.difficulte == "Facile":
+        #         params=('SQL','Facile')
+        #         return params
+        #     if joueur.difficulte == "Intermediaire":
+        #         params=('SQL','Intermediaire')
+        #         return params
+        #     if joueur.difficulte == "Difficile":
+        #         params=('SQL','Difficile')
+        #         return params
             
-        elif self.grille[joueur.x] =='🟨':
-            if joueur.difficulte == "Facile":
-                params=('Python','Facile')
-                return params
+        # elif self.grille[joueur.x] =='🟨':
+        #     if joueur.difficulte == "Facile":
+        #         params=('Python','Facile')
+        #         return params
 
-            if joueur.difficulte == "Intermediaire":
-                params=('Python','Intermediaire')
-                return params
-            if joueur.difficulte == "Difficile":
-                params=('Python','Difficile')
-                return params
+        #     if joueur.difficulte == "Intermediaire":
+        #         params=('Python','Intermediaire')
+        #         return params
+        #     if joueur.difficulte == "Difficile":
+        #         params=('Python','Difficile')
+        #         return params
 
-        elif self.grille[joueur.x] =='🟩':
-            if joueur.difficulte == "Facile":
-                params=('Ligne de commandes','Facile')
-                return params
-            if joueur.difficulte == "Intermediaire":
-                params=('Ligne de commandes','Intermediaire')
-                return params
-            if joueur.difficulte == "Difficile":
-                params=('Ligne de commandes','Difficile')
-                return params
+        # elif self.grille[joueur.x] =='🟩':
+        #     if joueur.difficulte == "Facile":
+        #         params=('Ligne de commandes','Facile')
+        #         return params
+        #     if joueur.difficulte == "Intermediaire":
+        #         params=('Ligne de commandes','Intermediaire')
+        #         return params
+        #     if joueur.difficulte == "Difficile":
+        #         params=('Ligne de commandes','Difficile')
+        #         return params
 
-        elif self.grille[joueur.x] =='🟦':
-            if joueur.difficulte == "Facile":
-                params=('Actualités IA','Facile')
-                return params
-            if joueur.difficulte == "Intermediaire":
-                params=('Actualités IA','Intermediaire')
-                return params
-            if joueur.difficulte == "Difficile":
-                params=('Actualités IA','Difficile')
-                return params
+        # elif self.grille[joueur.x] =='🟦':
+        #     if joueur.difficulte == "Facile":
+        #         params=('Actualités IA','Facile')
+        #         return params
+        #     if joueur.difficulte == "Intermediaire":
+        #         params=('Actualités IA','Intermediaire')
+        #         return params
+        #     if joueur.difficulte == "Difficile":
+        #         params=('Actualités IA','Difficile')
+        #         return params
 
-        elif self.grille[joueur.x] =='🟪':
-            if joueur.difficulte == "Facile":
-                params=('Git/Github','Facile')
-                return params
-            if joueur.difficulte == "Intermediaire":
-                params=('Git/Github','Intermediaire')
-                return params
-            if joueur.difficulte == "Difficile":
-                params=('Git/Github','Difficile')
-                return params
+        # elif self.grille[joueur.x] =='🟪':
+        #     if joueur.difficulte == "Facile":
+        #         params=('Git/Github','Facile')
+        #         return params
+        #     if joueur.difficulte == "Intermediaire":
+        #         params=('Git/Github','Intermediaire')
+        #         return params
+        #     if joueur.difficulte == "Difficile":
+        #         params=('Git/Github','Difficile')
+        #         return params
 
-        elif self.grille[joueur.x] =='🟫':
-            if joueur.difficulte == "Facile":
-                params=('Thème mystère','Facile')
-                return params
-            if joueur.difficulte == "Intermediaire":
-                params=('Thème mystère','Intermediaire')
-                return params
-            if joueur.difficulte == "Difficile":
-                params=('Thème mystère','Difficile')
-                return params
-            
-        for categorie in self.categories:
+        # # elif self.grille[joueur.x] =='🟫':
+        # #     if joueur.difficulte == "Facile":
+        # #         params=('Thème mystère','Facile')
+        # #         return params
+        # #     if joueur.difficulte == "Intermediaire":
+        # #         params=('Thème mystère','Intermediaire')
+        # #         return params
+        # #     if joueur.difficulte == "Difficile":
+        # #         params=('Thème mystère','Difficile')
+        # #         return params
+        
+        dico = {'🟥' : 'SQL' , '🟨' :'Python' , '🟩' : 'Ligne de commandes' , '🟦' : 'Actualités IA' , '🟪' : 'Git/Github' , '🟫' : 'Thème mystère'}    
+        
+        for carre, categorie in dico.items():
             difficulte = joueur.difficulte
-            if self.grille[joueur.x] == categorie:
-                params=('Thème mystère',difficulte)
+            
+            if self.grille[joueur.x] == carre:
+                params=(categorie,difficulte)
                 return params
 
 
@@ -215,6 +219,7 @@ class Plateau:
             # ''')
     
     def deroulement (self):
+
         
         self.afficher_le_plateau()
         for joueur in self.joueurs:
@@ -233,7 +238,7 @@ class Plateau:
         os.system('clear')
         self.fin_de_partie(joueur)
                                 
-access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')   
+access = MySQLHandler(host='localhost' , user='sims' , password='psswd' , database='trivia_db')   
 plateau1 = Plateau(access)
 plateau1.peupler_le_plateau(int(input("Combien de joueurs : ")))
 plateau1.deroulement()
