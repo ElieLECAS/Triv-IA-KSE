@@ -100,6 +100,13 @@ class MySQLHandler:
         except mysql.connector.ProgrammingError as e:
             print(f"Erreur de programmation SQL : {e}")
 
+    def afficher_table(self):
+        self.cursor.execute("DESCRIBE questions;")
+        fields=self.cursor.fetchall()
+
+        for field in fields:
+            print(field[0])
+
 
     def delete_questions(self, id_question):
         query = "DELETE FROM questions WHERE id_question = %s"
@@ -110,7 +117,7 @@ class MySQLHandler:
     def importer_questions_csv(self, file_path):
         try:
             # Lire le fichier CSV avec pandas
-            datafile = pd.read_csv(file_path)
+            datafile = pd.read_csv(file_path,sep= ';')
 
             # Parcourir les lignes du DataFrame et insérer dans la table
             for index, row in datafile.iterrows():
@@ -129,13 +136,16 @@ class MySQLHandler:
 
 
 
-access = MySQLHandler(host='localhost' , user='root' , password='psswd' , database='trivia_db')
+access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')
 access.create_table_questions()
-access.create_table_reponses()
-access.importer_questions_csv('/questions.csv')
-print(access.read_questions())
-access.close_connection()
 
+# access.create_table_reponses()
+# access.importer_questions_csv('/questions.csv')
+params=('SQL','Difficile')
+print(access.read_questions(params))
+# access.afficher_table()
+# access.close_connection()
+# access.importer_questions_csv('questions.csv')
 
 
     
