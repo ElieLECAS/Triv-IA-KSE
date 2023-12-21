@@ -39,8 +39,8 @@ class Plateau:
             if joueur.difficulte == "Intermediaire":
                 params=('SQL','Intermediaire')
                 return params
-            if joueur.difficulte == "Difficle":
-                params=('SQL','Difficle')
+            if joueur.difficulte == "Difficile":
+                params=('SQL','Difficile')
                 return params
             
         elif self.grille[joueur.x] =='🟨':
@@ -50,8 +50,8 @@ class Plateau:
             if joueur.difficulte == "Intermediaire":
                 params=('Python','Intermediaire')
                 return params
-            if joueur.difficulte == "Difficle":
-                params=('Python','Difficle')
+            if joueur.difficulte == "Difficile":
+                params=('Python','Difficile')
                 return params
 
         elif self.grille[joueur.x] =='🟩':
@@ -61,8 +61,8 @@ class Plateau:
             if joueur.difficulte == "Intermediaire":
                 params=('Ligne de commande','Intermediaire')
                 return params
-            if joueur.difficulte == "Difficle":
-                params=('Ligne de commande','Difficle')
+            if joueur.difficulte == "Difficile":
+                params=('Ligne de commande','Difficile')
                 return params
 
         elif self.grille[joueur.x] =='🟦':
@@ -72,8 +72,8 @@ class Plateau:
             if joueur.difficulte == "Intermediaire":
                 params=('Actualités IA','Intermediaire')
                 return params
-            if joueur.difficulte == "Difficle":
-                params=('Actualités IA','Difficle')
+            if joueur.difficulte == "Difficile":
+                params=('Actualités IA','Difficile')
                 return params
 
         elif self.grille[joueur.x] =='🟪':
@@ -83,8 +83,8 @@ class Plateau:
             if joueur.difficulte == "Intermediaire":
                 params=('Git/Github','Intermediaire')
                 return params
-            if joueur.difficulte == "Difficle":
-                params=('Git/Github','Difficle')
+            if joueur.difficulte == "Difficile":
+                params=('Git/Github','Difficile')
                 return params
 
         elif self.grille[joueur.x] =='🟫':
@@ -94,8 +94,8 @@ class Plateau:
             if joueur.difficulte == "Intermediaire":
                 params=('Thème mystère','Intermediaire')
                 return params
-            if joueur.difficulte == "Difficle":
-                params=('Thème mystère','Difficle')
+            if joueur.difficulte == "Difficile":
+                params=('Thème mystère','Difficile')
                 return params
 
 
@@ -114,25 +114,55 @@ class Plateau:
         print(f'Le lancer de dé donne  : {valeur_de}\n')
         
 
+    # def questions_reponses(self, joueur):
+    #     params = self.attribution_categorie(joueur)
+    #     self.attribution_categorie(joueur)
+    #     question = self.access.read_questions(params)
+    #     print(question)
+    #     return_reponse = self.access.bonne_reponse(question)
+    #     access.bonne_reponse(question)
+    #     if input() == return_reponse:
+    #         os.system('clear')
+    #         print(f'Bravo ! {joueur.nom_du_joueur}\n')
+    #         joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
+    #         if len(joueur.score) == 2:
+    #             joueur.difficulte = "Intermediaire"
+    #         elif len(joueur.score) == 4:
+    #             joueur.difficulte = "Difficile"
+    #     else:
+    #         os.system('clear')
+    #         print('Perdu ! \n')
+
+    #     joueur.tot_reponses_repondues.append(self.grille[joueur.x])
+
     def questions_reponses(self, joueur):
         params = self.attribution_categorie(joueur)
-        self.attribution_categorie(joueur)
         question = self.access.read_questions(params)
-        print(question)
-        access.bonne_reponse(question)
-        if input() == access.bonne_reponse(question):
-            os.system('clear')
-            print(f'Bravo ! {joueur.nom_du_joueur}\n')
-            joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
-            if len(joueur.score) == 2:
-                joueur.difficulte = "Intermediaire"
-            elif len(joueur.score) == 4:
-                joueur.difficulte = "Difficile"
+        
+        if question:  # Vérifiez si la liste de questions n'est pas vide
+            question = question[0]  # Prenez la première question de la liste
+
+            print(question)
+            return_reponse = self.access.bonne_reponse(question)
+
+            user_input = input()
+            if user_input == return_reponse:
+                os.system('clear')
+                print(f'Bravo ! {joueur.nom_du_joueur}\n')
+                joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
+                if len(joueur.score) == 2:
+                    joueur.difficulte = "Intermediaire"
+                elif len(joueur.score) == 4:
+                    joueur.difficulte = "Difficile"
+            else:
+                os.system('clear')
+                print('Perdu ! \n')
+
+            joueur.tot_reponses_repondues.append(self.grille[joueur.x])
         else:
             os.system('clear')
-            print('Perdu ! \n')
-
-        joueur.tot_reponses_repondues.append(self.grille[joueur.x])
+            print("Aucune question disponible pour cette catégorie et difficulté.")
+            
 
 
     def fin_de_tour(self, joueur):
