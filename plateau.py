@@ -47,6 +47,7 @@ class Plateau:
             if joueur.difficulte == "Facile":
                 params=('Python','Facile')
                 return params
+
             if joueur.difficulte == "Intermediaire":
                 params=('Python','Intermediaire')
                 return params
@@ -138,17 +139,19 @@ class Plateau:
     def questions_reponses(self, joueur):
         params = self.attribution_categorie(joueur)
         question = self.access.read_questions(params)
-        
+
+        print (f"{' '.join(joueur.score)}\n\n")
+
         if question:  # Vérifiez si la liste de questions n'est pas vide
             question = question[0]  # Prenez la première question de la liste
-
+            print(f"Catégorie : {params[0]}\nNiveau : {params[1]}\n")
             print(question)
             return_reponse = self.access.bonne_reponse(question)
 
             user_input = input()
             if user_input == return_reponse:
                 os.system('clear')
-                print(f'Bravo ! {joueur.nom_du_joueur}\n')
+                print(f'Bravo {joueur.nom_du_joueur}!\n\n')
                 joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
                 if len(joueur.score) == 2:
                     joueur.difficulte = "Intermediaire"
@@ -156,7 +159,9 @@ class Plateau:
                     joueur.difficulte = "Difficile"
             else:
                 os.system('clear')
-                print('Perdu ! \n')
+                print('Perdu ! \n\n')
+                print(f"{question}\n")
+                print(f" La bonne réponse était {return_reponse}\n\n")
 
             joueur.tot_reponses_repondues.append(self.grille[joueur.x])
         else:
