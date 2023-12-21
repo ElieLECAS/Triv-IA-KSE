@@ -174,7 +174,7 @@ class MySQLHandler:
         result = self.cursor.fetchall()
         
         if result:
-            return result[0]  # Retournez le premier élément du résultat
+            return result[0][0]  # Retournez le premier élément du résultat
         else:
             return None  # Ou quelque chose d'autre selon le cas
 

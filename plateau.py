@@ -56,13 +56,13 @@ class Plateau:
 
         elif self.grille[joueur.x] =='🟩':
             if joueur.difficulte == "Facile":
-                params=('Ligne de commande','Facile')
+                params=('Ligne de commandes','Facile')
                 return params
             if joueur.difficulte == "Intermediaire":
-                params=('Ligne de commande','Intermediaire')
+                params=('Ligne de commandes','Intermediaire')
                 return params
             if joueur.difficulte == "Difficile":
-                params=('Ligne de commande','Difficile')
+                params=('Ligne de commandes','Difficile')
                 return params
 
         elif self.grille[joueur.x] =='🟦':
