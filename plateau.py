@@ -1,17 +1,19 @@
 from random import randint,choice
 from pion import Camembert
+from mysqlHandler import MySQLHandler
 import os
 import time
 
 
 class Plateau:
-    def __init__(self):
+    def __init__(self,access):
         self.categories=['🟥','🟨','🟩','🟦','🟪','🟫']
         self.grille = self.categories *3
         self.largeur_de_la_grille = len(self.grille)
         self.camemberts_disponibles = ["🔴","🔵","🟢","🟣","🟡","🟠",] 
         self.joueurs = []
         self.tableau_de_scores = []
+        self.access= access
        
  
 
@@ -32,51 +34,69 @@ class Plateau:
 
         if self.grille[joueur.x] =='🟥':
             if joueur.difficulte == "Facile":
-                print('rouge Facile')
+                params=('SQL','Facile')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Intermediaire":
-                print('rouge Intermediaire')
+                params=('SQL','Intermediaire')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Difficle":
-                print('rouge Difficle')
+                params=('SQL','Difficle')
+                print(self.access.read_questions(params))
             
         elif self.grille[joueur.x] =='🟨':
             if joueur.difficulte == "Facile":
-                print('jaune Facile')
+                params=('Python','Facile')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Intermediaire":
-                print('jaune Intermediaire')
+                params=('Python','Intermediaire')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Difficle":
-                print('jaune Difficle')
+                params=('Python','Difficle')
+                print(self.access.read_questions(params))
 
         elif self.grille[joueur.x] =='🟩':
             if joueur.difficulte == "Facile":
-                print('vert Facile')
+                params=('Ligne de commande','Facile')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Intermediaire":
-                print('vert Intermediaire')
+                params=('Ligne de commande','Intermediaire')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Difficle":
-                print('vert Difficle')
+                params=('Ligne de commande','Difficle')
+                print(self.access.read_questions(params))
 
         elif self.grille[joueur.x] =='🟦':
             if joueur.difficulte == "Facile":
-                print('bleu Facile')
+                params=('Actualités IA','Facile')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Intermediaire":
-                print('bleu Intermediaire')
+                params=('Actualités IA','Intermediaire')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Difficle":
-                print('bleu Difficle')
+                params=('Actualités IA','Difficle')
+                print(self.access.read_questions(params))
 
         elif self.grille[joueur.x] =='🟪':
             if joueur.difficulte == "Facile":
-                print('violet Facile')
+                params=('Git/Github','Facile')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Intermediaire":
-                print('violet Intermediaire')
+                params=('Git/Github','Intermediaire')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Difficle":
-                print('violet Difficle')
+                params=('Git/Github','Difficle')
+                print(self.access.read_questions(params))
 
         elif self.grille[joueur.x] =='🟫':
             if joueur.difficulte == "Facile":
-                print('marron Facile')
+                params=('Thème mystère','Facile')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Intermediaire":
-                print('marron Intermediaire')
+                params=('Thème mystère','Intermediaire')
+                print(self.access.read_questions(params))
             if joueur.difficulte == "Difficle":
-                print('marron Difficle')
+                params=('Thème mystère','Difficle')
+                print(self.access.read_questions(params))
 
 
     def debut_de_tour(self, joueur):
@@ -167,7 +187,7 @@ class Plateau:
         os.system('clear')
         self.fin_de_partie(joueur)
                                 
-    
-plateau1 = Plateau()
+access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')   
+plateau1 = Plateau(access)
 plateau1.peupler_le_plateau(int(input("Combien de joueurs : ")))
 plateau1.deroulement()

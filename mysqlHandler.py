@@ -77,7 +77,7 @@ class MySQLHandler:
 
 
     def read_questions(self,params):
-        query = """SELECT intitule, choix1, choix2, choix3, choix4 FROM questions WHERE categorie = %s AND difficulte = %s"""
+        query = """SELECT intitule, choix1, choix2, choix3, choix4 FROM questions WHERE categorie = %s AND difficulte = %s order by rand() limit 1"""
         self.cursor.execute(query, params)
         return self.cursor.fetchall()
     
@@ -161,11 +161,11 @@ class MySQLHandler:
 
 
 access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')
-access.create_table_questions()
-# access.delete_data()
-access.create_table_reponses()
-access.importer_questions_csv('questions.csv')
-access.importer_reponses_csv('reponses.csv')
+# access.create_table_questions()
+# # access.delete_data()
+# access.create_table_reponses()
+# access.importer_questions_csv('questions.csv')
+# access.importer_reponses_csv('reponses.csv')
 # params=('SQL','Difficile')
 # print(access.read_questions(params))
 # access.afficher_table()
