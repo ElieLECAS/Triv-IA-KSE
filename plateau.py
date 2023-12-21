@@ -35,68 +35,68 @@ class Plateau:
         if self.grille[joueur.x] =='🟥':
             if joueur.difficulte == "Facile":
                 params=('SQL','Facile')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Intermediaire":
                 params=('SQL','Intermediaire')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Difficle":
                 params=('SQL','Difficle')
-                print(self.access.read_questions(params))
+                return params
             
         elif self.grille[joueur.x] =='🟨':
             if joueur.difficulte == "Facile":
                 params=('Python','Facile')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Intermediaire":
                 params=('Python','Intermediaire')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Difficle":
                 params=('Python','Difficle')
-                print(self.access.read_questions(params))
+                return params
 
         elif self.grille[joueur.x] =='🟩':
             if joueur.difficulte == "Facile":
                 params=('Ligne de commande','Facile')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Intermediaire":
                 params=('Ligne de commande','Intermediaire')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Difficle":
                 params=('Ligne de commande','Difficle')
-                print(self.access.read_questions(params))
+                return params
 
         elif self.grille[joueur.x] =='🟦':
             if joueur.difficulte == "Facile":
                 params=('Actualités IA','Facile')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Intermediaire":
                 params=('Actualités IA','Intermediaire')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Difficle":
                 params=('Actualités IA','Difficle')
-                print(self.access.read_questions(params))
+                return params
 
         elif self.grille[joueur.x] =='🟪':
             if joueur.difficulte == "Facile":
                 params=('Git/Github','Facile')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Intermediaire":
                 params=('Git/Github','Intermediaire')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Difficle":
                 params=('Git/Github','Difficle')
-                print(self.access.read_questions(params))
+                return params
 
         elif self.grille[joueur.x] =='🟫':
             if joueur.difficulte == "Facile":
                 params=('Thème mystère','Facile')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Intermediaire":
                 params=('Thème mystère','Intermediaire')
-                print(self.access.read_questions(params))
+                return params
             if joueur.difficulte == "Difficle":
                 params=('Thème mystère','Difficle')
-                print(self.access.read_questions(params))
+                return params
 
 
     def debut_de_tour(self, joueur):
@@ -112,10 +112,15 @@ class Plateau:
         joueur.deplacer_camembert()
         self.afficher_le_plateau()
         print(f'Le lancer de dé donne  : {valeur_de}\n')
-        self.attribution_categorie(joueur)
+        
 
     def questions_reponses(self, joueur):
-        if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
+        params = self.attribution_categorie(joueur)
+        self.attribution_categorie(joueur)
+        question = self.access.read_questions(params)
+        print(question)
+        access.bonne_reponse(question)
+        if input() == access.bonne_reponse(question):
             os.system('clear')
             print(f'Bravo ! {joueur.nom_du_joueur}\n')
             joueur.tot_bonnes_reponses.append(self.grille[joueur.x])

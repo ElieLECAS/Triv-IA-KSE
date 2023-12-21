@@ -160,6 +160,19 @@ class MySQLHandler:
                 print(f"Erreur : {e}")
 
 
+    def bonne_reponse (self, question):
+        query = """
+        SELECT r.reponse_correcte, q.id_question
+        FROM reponses r
+        JOIN questions q ON r.id_question = q.id_question
+        WHERE q.intitule = %s
+        """
+        # Exécutez la requête avec le paramètre de la question_intitule
+        result = self.execute_query(query, (question_intitule,))
+
+        # Retournez le résultat de la requête
+        return result
+
 access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')
 # access.create_table_questions()
 # # access.delete_data()
