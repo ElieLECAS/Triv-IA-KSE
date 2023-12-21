@@ -162,7 +162,7 @@ class MySQLHandler:
 
     def bonne_reponse(self, question):
         query = """
-        SELECT r.reponse_correcte, q.id_question
+        SELECT r.reponse_correcte
         FROM reponses r
         JOIN questions q ON r.id_question = q.id_question
         WHERE q.intitule = %s
