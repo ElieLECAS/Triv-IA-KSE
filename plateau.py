@@ -124,7 +124,7 @@ class Plateau:
             if len(joueur.score) == 6:
                 print(f'--------------------------\n\n👑 {joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
             else:
-                print(f'--------------------------\n\n{joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
+                print(f'--------------------------\n\n💩 {joueur.nom_du_joueur} 💩 : {" ".join(joueur.score)}\n')
             print(f'Tu as répondu correctement à {len(joueur.tot_bonnes_reponses)} sur {len(joueur.tot_reponses_repondues)} questions !\n')
 
             for categorie in joueur.score and self.categories:
