@@ -88,16 +88,15 @@ class Plateau:
         input("\nAppuie sur Entrée pour lancer le dé ! ")
 
         os.system('clear')
-        
-        print(f'Le lancer de dé donne  : {valeur_de}\n')
         joueur.deplacer_camembert()
         self.afficher_le_plateau()
+        print(f'Le lancer de dé donne  : {valeur_de}\n')
         self.attribution_categorie(joueur)
 
     def questions_reponses(self, joueur):
         if input(f'\nQuestion de niveau {joueur.difficulte} \nParis est la capitale de la France.\na. True   b. False\n\nVotre réponse : \n') == "a":
             os.system('clear')
-            print('Bravo ! \n')
+            print(f'Bravo ! {joueur.nom_du_joueur}\n')
             joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
             if len(joueur.score) == 2:
                 joueur.difficulte = "Intermediaire"
@@ -109,22 +108,27 @@ class Plateau:
 
         joueur.tot_reponses_repondues.append(self.grille[joueur.x])
 
+
     def fin_de_tour(self, joueur):
         joueur.afficher_score()
-           
+          
         self.afficher_le_plateau()
         print(f'\nTu as maintenant {len(joueur.score)} camemberts ! \n')
         print(" ".join(joueur.score))
         input('\nAppuie sur Entrée pour finir le tour !\n')
 
-    def fin_de_partie(self, joueur):
 
+    def fin_de_partie(self, joueur):
+        
         for joueur in self.joueurs:
-            print(f'{joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
-            print(f'Tu as répondu correctement à {len(joueur.tot_bonnes_reponses)} sur {len(joueur.tot_reponses_repondues)} question, soit un ratio de {int(int(len(joueur.tot_bonnes_reponses))/int(len(joueur.tot_reponses_repondues)))*100}%\n')
+            if len(joueur.score) == 6:
+                print(f'--------------------------\n\n👑 {joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
+            else:
+                print(f'--------------------------\n\n{joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
+            print(f'Tu as répondu correctement à {len(joueur.tot_bonnes_reponses)} sur {len(joueur.tot_reponses_repondues)} questions !\n')
 
             for categorie in joueur.score and self.categories:
-                print(f'{categorie} : {joueur.tot_bonnes_reponses.count(categorie)} / {joueur.tot_reponses_repondues.count(categorie)} {int(joueur.tot_reponses_repondues.count(categorie) and joueur.tot_bonnes_reponses.count(categorie)/joueur.tot_reponses_repondues.count(categorie)*100 or 0)}%\n')
+                print(f'{categorie} : {joueur.tot_bonnes_reponses.count(categorie)} / {joueur.tot_reponses_repondues.count(categorie)} {int(joueur.tot_reponses_repondues.count(categorie) and joueur.tot_bonnes_reponses.count(categorie)/joueur.tot_reponses_repondues.count(categorie)*100 or 0)}%\n\n')
 
         
             # print(f'''
@@ -159,7 +163,7 @@ class Plateau:
                 if len(joueur.score) == 6:
                     print("Gagné !\n")
                     break
-
+        os.system('clear')
         self.fin_de_partie(joueur)
                                 
     
