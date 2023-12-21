@@ -109,6 +109,7 @@ class Plateau:
 
         joueur.tot_reponses_repondues.append(self.grille[joueur.x])
 
+
     def fin_de_tour(self, joueur):
         joueur.afficher_score()
            
@@ -117,14 +118,15 @@ class Plateau:
         print(" ".join(joueur.score))
         input('\nAppuie sur Entrée pour finir le tour !\n')
 
+
     def fin_de_partie(self, joueur):
 
         for joueur in self.joueurs:
-            print(f'{joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
-            print(f'Tu as répondu correctement à {len(joueur.tot_bonnes_reponses)} sur {len(joueur.tot_reponses_repondues)} question, soit un ratio de {int(int(len(joueur.tot_bonnes_reponses))/int(len(joueur.tot_reponses_repondues)))*100}%\n')
+            print(f'--------------------------\n\n{joueur.nom_du_joueur} : {" ".join(joueur.score)}\n')
+            print(f'Tu as répondu correctement à {len(joueur.tot_bonnes_reponses)} sur {len(joueur.tot_reponses_repondues)} questions !\n')
 
             for categorie in joueur.score and self.categories:
-                print(f'{categorie} : {joueur.tot_bonnes_reponses.count(categorie)} / {joueur.tot_reponses_repondues.count(categorie)} {int(joueur.tot_reponses_repondues.count(categorie) and joueur.tot_bonnes_reponses.count(categorie)/joueur.tot_reponses_repondues.count(categorie)*100 or 0)}%\n')
+                print(f'{categorie} : {joueur.tot_bonnes_reponses.count(categorie)} / {joueur.tot_reponses_repondues.count(categorie)} {int(joueur.tot_reponses_repondues.count(categorie) and joueur.tot_bonnes_reponses.count(categorie)/joueur.tot_reponses_repondues.count(categorie)*100 or 0)}%\n\n')
 
         
             # print(f'''
