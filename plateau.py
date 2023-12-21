@@ -14,6 +14,7 @@ class Plateau:
         self.joueurs = []
         self.tableau_de_scores = []
         self.access= access
+           
        
  
 
@@ -98,11 +99,14 @@ class Plateau:
         #     if joueur.difficulte == "Difficile":
         #         params=('Thème mystère','Difficile')
         #         return params
-            
-        for categorie in self.categories:
+        
+        dico = {'🟥' : 'SQL' , '🟨' :'Python' , '🟩' : 'Ligne de commandes' , '🟦' : 'Actualités IA' , '🟪' : 'Git/Github' , '🟫' : 'Thème mystère'}    
+        
+        for carre, categorie in dico.items():
             difficulte = joueur.difficulte
-            if self.grille[joueur.x] == categorie:
-                params=('Thème mystère',difficulte)
+            
+            if self.grille[joueur.x] == carre:
+                params=(categorie,difficulte)
                 return params
 
 
@@ -215,6 +219,7 @@ class Plateau:
             # ''')
     
     def deroulement (self):
+
         
         self.afficher_le_plateau()
         for joueur in self.joueurs:
@@ -233,7 +238,7 @@ class Plateau:
         os.system('clear')
         self.fin_de_partie(joueur)
                                 
-access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')   
+access = MySQLHandler(host='localhost' , user='sims' , password='psswd' , database='trivia_db')   
 plateau1 = Plateau(access)
 plateau1.peupler_le_plateau(int(input("Combien de joueurs : ")))
 plateau1.deroulement()
