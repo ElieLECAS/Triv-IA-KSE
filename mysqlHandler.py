@@ -113,6 +113,10 @@ class MySQLHandler:
         self.cursor.execute(query, id_question)
         self.connection.commit()
 
+    def delete_data(self):
+        query = "DROP TABle questions"
+        self.cursor.execute(query)
+        self.connection.commit()
 
     def importer_questions_csv(self, file_path):
         try:
@@ -135,17 +139,38 @@ class MySQLHandler:
             print(f"Erreur : {e}")
 
 
+    def importer_reponses_csv(self, file_path):
+            try:
+                # Lire le fichier CSV avec pandas
+                datafile = pd.read_csv(file_path, sep=';')
+
+                # Parcourir les lignes du DataFrame et insérer dans la table
+                for index, row in datafile.iterrows():
+                    query = """
+                        INSERT INTO reponses (id_question, reponse_correcte)
+                        VALUES (%s, %s)
+                    """
+                    values = tuple(row)
+                    self.cursor.execute(query, values)
+
+                # Commit
+                self.connection.commit()
+                print("Importation réussie.")
+            except Exception as e:
+                print(f"Erreur : {e}")
+
 
 access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')
 access.create_table_questions()
-
-# access.create_table_reponses()
-# access.importer_questions_csv('/questions.csv')
-params=('SQL','Difficile')
-print(access.read_questions(params))
+# access.delete_data()
+access.create_table_reponses()
+access.importer_questions_csv('questions.csv')
+access.importer_reponses_csv('reponses.csv')
+# params=('SQL','Difficile')
+# print(access.read_questions(params))
 # access.afficher_table()
 # access.close_connection()
-# access.importer_questions_csv('questions.csv')
+
 
 
     

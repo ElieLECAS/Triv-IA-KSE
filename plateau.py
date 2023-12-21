@@ -3,6 +3,7 @@ from pion import Camembert
 import os
 import time
 
+
 class Plateau:
     def __init__(self):
         self.categories=['🟥','🟨','🟩','🟦','🟪','🟫']
