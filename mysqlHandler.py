@@ -181,7 +181,7 @@ class MySQLHandler:
 
 access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')
 # access.create_table_questions()
-# # access.delete_data()
+# access.delete_data()
 # access.create_table_reponses()
 # access.importer_questions_csv('questions.csv')
 # access.importer_reponses_csv('reponses.csv')
