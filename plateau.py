@@ -33,72 +33,6 @@ class Plateau:
     
     def attribution_categorie(self,joueur):
 
-        # if self.grille[joueur.x] =='🟥':
-        #     if joueur.difficulte == "Facile":
-        #         params=('SQL','Facile')
-        #         return params
-        #     if joueur.difficulte == "Intermediaire":
-        #         params=('SQL','Intermediaire')
-        #         return params
-        #     if joueur.difficulte == "Difficile":
-        #         params=('SQL','Difficile')
-        #         return params
-            
-        # elif self.grille[joueur.x] =='🟨':
-        #     if joueur.difficulte == "Facile":
-        #         params=('Python','Facile')
-        #         return params
-
-        #     if joueur.difficulte == "Intermediaire":
-        #         params=('Python','Intermediaire')
-        #         return params
-        #     if joueur.difficulte == "Difficile":
-        #         params=('Python','Difficile')
-        #         return params
-
-        # elif self.grille[joueur.x] =='🟩':
-        #     if joueur.difficulte == "Facile":
-        #         params=('Ligne de commandes','Facile')
-        #         return params
-        #     if joueur.difficulte == "Intermediaire":
-        #         params=('Ligne de commandes','Intermediaire')
-        #         return params
-        #     if joueur.difficulte == "Difficile":
-        #         params=('Ligne de commandes','Difficile')
-        #         return params
-
-        # elif self.grille[joueur.x] =='🟦':
-        #     if joueur.difficulte == "Facile":
-        #         params=('Actualités IA','Facile')
-        #         return params
-        #     if joueur.difficulte == "Intermediaire":
-        #         params=('Actualités IA','Intermediaire')
-        #         return params
-        #     if joueur.difficulte == "Difficile":
-        #         params=('Actualités IA','Difficile')
-        #         return params
-
-        # elif self.grille[joueur.x] =='🟪':
-        #     if joueur.difficulte == "Facile":
-        #         params=('Git/Github','Facile')
-        #         return params
-        #     if joueur.difficulte == "Intermediaire":
-        #         params=('Git/Github','Intermediaire')
-        #         return params
-        #     if joueur.difficulte == "Difficile":
-        #         params=('Git/Github','Difficile')
-        #         return params
-
-        # # elif self.grille[joueur.x] =='🟫':
-        # #     if joueur.difficulte == "Facile":
-        # #         params=('Thème mystère','Facile')
-        # #         return params
-        # #     if joueur.difficulte == "Intermediaire":
-        # #         params=('Thème mystère','Intermediaire')
-        # #         return params
-        # #     if joueur.difficulte == "Difficile":
-        # #         params=('Thème mystère','Difficile')
-        # #         return params
         
         dico = {'🟥' : 'SQL' , '🟨' :'Python' , '🟩' : 'Ligne de commandes' , '🟦' : 'Actualités IA' , '🟪' : 'Git/Github' , '🟫' : 'Thème mystère'}    
         
@@ -125,26 +59,6 @@ class Plateau:
         print(f'Le lancer de dé donne  : {valeur_de}\n')
         
 
-    # def questions_reponses(self, joueur):
-    #     params = self.attribution_categorie(joueur)
-    #     self.attribution_categorie(joueur)
-    #     question = self.access.read_questions(params)
-    #     print(question)
-    #     return_reponse = self.access.bonne_reponse(question)
-    #     access.bonne_reponse(question)
-    #     if input() == return_reponse:
-    #         os.system('clear')
-    #         print(f'Bravo ! {joueur.nom_du_joueur}\n')
-    #         joueur.tot_bonnes_reponses.append(self.grille[joueur.x])
-    #         if len(joueur.score) == 2:
-    #             joueur.difficulte = "Intermediaire"
-    #         elif len(joueur.score) == 4:
-    #             joueur.difficulte = "Difficile"
-    #     else:
-    #         os.system('clear')
-    #         print('Perdu ! \n')
-
-    #     joueur.tot_reponses_repondues.append(self.grille[joueur.x])
 
     def questions_reponses(self, joueur):
         params = self.attribution_categorie(joueur)
@@ -202,21 +116,6 @@ class Plateau:
                 print(f'{categorie} : {joueur.tot_bonnes_reponses.count(categorie)} / {joueur.tot_reponses_repondues.count(categorie)} {int(joueur.tot_reponses_repondues.count(categorie) and joueur.tot_bonnes_reponses.count(categorie)/joueur.tot_reponses_repondues.count(categorie)*100 or 0)}%\n\n')
 
         
-            # print(f'''
-            #       🟥 : {joueur.tot_bonnes_reponses.count("🟥")} / {joueur.tot_reponses_repondues.count("🟥")} {int(joueur.tot_reponses_repondues.count("🟥") and joueur.tot_bonnes_reponses.count("🟥")/joueur.tot_reponses_repondues.count("🟥")*100 or 0)}%\n
-
-            #       🟨 : {joueur.tot_bonnes_reponses.count("🟨")} / {joueur.tot_reponses_repondues.count("🟨")} {int(joueur.tot_reponses_repondues.count("🟨") and joueur.tot_bonnes_reponses.count("🟨")/joueur.tot_reponses_repondues.count("🟨")*100 or 0)}%\n
-
-            #       🟩 : {joueur.tot_bonnes_reponses.count("🟩")} / {joueur.tot_reponses_repondues.count("🟩")} {int(joueur.tot_reponses_repondues.count("🟩") and joueur.tot_bonnes_reponses.count("🟩")/joueur.tot_reponses_repondues.count("🟩")*100 or 0)}%\n
-
-            #       🟦 : {joueur.tot_bonnes_reponses.count("🟦")} / {joueur.tot_reponses_repondues.count("🟦")} {int(joueur.tot_reponses_repondues.count("🟦") and joueur.tot_bonnes_reponses.count("🟦")/joueur.tot_reponses_repondues.count("🟦")*100 or 0)}%\n
-
-            #       🟪 : {joueur.tot_bonnes_reponses.count("🟪")} / {joueur.tot_reponses_repondues.count("🟪")} {int(joueur.tot_reponses_repondues.count("🟪") and joueur.tot_bonnes_reponses.count("🟪")/joueur.tot_reponses_repondues.count("🟪")*100 or 0)}%\n
-
-            #       🟫 : {joueur.tot_bonnes_reponses.count("🟫")} / {joueur.tot_reponses_repondues.count("🟫")} {int(joueur.tot_reponses_repondues.count("🟫") and joueur.tot_bonnes_reponses.count("🟫")/joueur.tot_reponses_repondues.count("🟫")*100 or 0)}%\n
-
-                
-            # ''')
     
     def deroulement (self):
 
@@ -238,7 +137,3 @@ class Plateau:
         os.system('clear')
         self.fin_de_partie(joueur)
                                 
-access = MySQLHandler(host='localhost' , user='kevin' , password='Plasma2020@' , database='trivia_db')   
-plateau1 = Plateau(access)
-plateau1.peupler_le_plateau(int(input("Combien de joueurs : ")))
-plateau1.deroulement()
